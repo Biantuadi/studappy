@@ -20,15 +20,15 @@ export default function Home() {
       </SectionHeader>
 
       <ContainerCategories>
-        <Section1>
+        <GroupeCategories>
           <Category text="Bons Plans" iconName="pricetags" />
           <Category text="WebOffers" iconName="globe" />
-        </Section1>
+        </GroupeCategories>
 
-        <Section2>
+        <GroupeCategories>
           <Category text="Aides d'État" iconName="cash" />
           <Category text="Evenements" iconName="calendar" />
-        </Section2>
+        </GroupeCategories>
       </ContainerCategories>
 
       <Sugestions />
@@ -66,13 +66,7 @@ const ContainerCategories = styled.View`
   gap: 13px;
   `;
 
-const Section1 = styled.View`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-`;
-
-const Section2 = styled.View`
+const GroupeCategories = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;

@@ -9,7 +9,11 @@ type CategoryProps = {
 
 export default function Category({iconName, text, onClick} : CategoryProps) {
   return (
-        <ContainerCategory onPress={onClick}>
+        <ContainerCategory 
+        // retirer l'opacité d'onpress 
+        activeOpacity={.8}
+        onPress={onClick}
+        >
             <Ionicons name={iconName as any} size={22} color="rgba(225, 225, 225, 0.4)" />
           <CategoryText>{text}</CategoryText>
           {/* icon flech droit > */}

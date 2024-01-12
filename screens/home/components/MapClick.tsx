@@ -1,19 +1,18 @@
 import styled from "styled-components/native";
 import ImgMap from "../../../assets/images/map_1.png";
 import { Ionicons } from "@expo/vector-icons";
-import { View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import Shape from "../../../assets/images/shape.png";
 import { Image } from "react-native";
 import MyPositionAnim from "./MyPositionAnim";
 
-export default function MapClick() {
+export default function MapClick({onPress}: {onPress?: () => void }) {
   return (
     <ContainerBgImage>
       <BgImage source={ImgMap as any} />
       <AllPositionContainer>
-        <View style={{ alignItems: "center", justifyContent: "center" }}>
+        <TouchableOpacity style={{ alignItems: "center", justifyContent: "center" }} onPress={onPress}>
           <PositionCard>
-            {/* icon map */}
             <Ionicons
               name="location"
               size={24}
@@ -37,7 +36,7 @@ export default function MapClick() {
           {/* icon chevron bas solid noir */}
           {/* <Ionicons name="chevron-down" size={24} color="#000" /> */}
           <Image source={Shape as any} width={84} height={84} />
-        </View>
+        </TouchableOpacity>
 
         <MyPositionAnim />
       </AllPositionContainer>

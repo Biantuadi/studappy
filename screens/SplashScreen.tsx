@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import * as Location from 'expo-location';
 
 const SplashScreen = ({ navigation }: any) => {
   const [isReady, setIsReady] = useState(false);
+  const [location, setLocation] = useState(null);
 
   useEffect(() => {
     const initializeApp = async () => {
       try {
-        // Effectuez ici les tâches de chargement nécessaires
-        // Exemple: Chargement de données, initialisation de services, etc.
+        let { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+          console.error('Permission to access location was denied');
+          return;
+        }
         
-        // Simuler un chargement
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Supprimez cette ligne dans la version finale
+        let currentLocation:any = await Location.getCurrentPositionAsync({});
+        setLocation(currentLocation);
+        
+        // Autres tâches de chargement
+        // ...
+        
       } catch (error) {
         console.error('Erreur lors de l\'initialisation de l\'app :', error);
       } finally {
@@ -23,10 +32,10 @@ const SplashScreen = ({ navigation }: any) => {
   }, []);
 
   useEffect(() => {
-    if (isReady) {
-      navigation.replace('Accueil');
+    if (isReady && location) {
+      navigation.replace('Accueil', { location });
     }
-  }, [isReady, navigation]);
+  }, [isReady, location, navigation]);
 
   return (
     <View style={styles.container}>

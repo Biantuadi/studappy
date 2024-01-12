@@ -5,38 +5,26 @@ import MapClick from "./components/MapClick";
 import Category from "./components/Category";
 import Sugestions from "./components/Sugestions";
 import { useNavigation } from "@react-navigation/native";
-import * as Location from 'expo-location';
+import * as Location from "expo-location";
 import { useEffect } from "react";
 import { RootStackParamList } from "../../types/app.types";
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
+export default function HomeScreen({ route }: any) {
+  type NavigationProp = NativeStackNavigationProp<
+    RootStackParamList,
+    "Accueil"
+  >;
+  const navigation = useNavigation<NavigationProp>();
+  const location = route.params?.location;
 
-
-
-
-export default function HomeScreen() {
-  type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Accueil'>;
-const navigation = useNavigation<NavigationProp>();
-
-  useEffect(() => {
-    (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        console.error('Permission to access location was denied');
-        return;
-      }
-
-      let location = await Location.getCurrentPositionAsync({});
-      // Vous pouvez maintenant passer cette localisation à MapScreen
-    })();
-  }, []);
-  
-
-  const handleMapClick = async () => {
-    const location = await Location.getCurrentPositionAsync({});
-    navigation.navigate('Map', { location });
+  const handleMapClick = () => {
+    if (location) {
+      navigation.navigate("Map", { location });
+    } else {
+      console.error("Location is not available");
+    }
   };
-  
 
   return (
     <HomeContainer showsVerticalScrollIndicator={false}>
@@ -47,13 +35,17 @@ const navigation = useNavigation<NavigationProp>();
           <TextTitle>Compagnon Etudiant !</TextTitle>
         </AcrrocheTextContainer>
 
-        <MapClick />
+        <MapClick onPress={handleMapClick} />
       </SectionHeader>
 
       <ContainerCategories>
         <GroupeCategories>
           {/* onclick navigate to map */}
-          <Category text="Bons Plans" iconName="pricetags" onClick={handleMapClick} />
+          <Category
+            text="Bons Plans"
+            iconName="pricetags"
+            onClick={handleMapClick}
+          />
 
           <Category text="WebOffers" iconName="globe" />
         </GroupeCategories>
@@ -97,7 +89,7 @@ const ContainerCategories = styled.View`
   margin-top: 90px;
   padding: 6px 8px;
   gap: 13px;
-  `;
+`;
 
 const GroupeCategories = styled.View`
   flex-direction: row;

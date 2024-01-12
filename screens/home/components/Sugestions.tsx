@@ -38,3 +38,6 @@ const ContainerTitle = styled.View`
   align-items: center;
   gap: 5px;
 `;
+
+
+

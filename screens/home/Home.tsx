@@ -7,7 +7,7 @@ import Sugestions from "./components/Sugestions";
 
 export default function Home() {
   return (
-    <HomeContainer>
+    <HomeContainer showsVerticalScrollIndicator={false}>
       <SectionHeader>
         <Header />
         <AcrrocheTextContainer>
@@ -37,7 +37,7 @@ export default function Home() {
   );
 }
 
-const HomeContainer = styled.View`
+const HomeContainer = styled.ScrollView`
   flex: 1;
   background-color: #f8fafb;
 `;
@@ -45,7 +45,7 @@ const HomeContainer = styled.View`
 const SectionHeader = styled.View`
   background-color: #1d1c1b;
   padding: 55px 15px 0 15px;
-  height: 40%;
+  height: 350px;
 `;
 
 const AcrrocheTextContainer = styled.View`

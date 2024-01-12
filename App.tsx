@@ -25,11 +25,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Splash from './screens/Splash';
 import HomeScreen from './screens/home/Home';
 
-// npm i --save-dev @types/react-navigation__native-stack ou yarn add @types/react-navigation__native-stack
-// npm i --save-dev @types/react-navigation__native
-// yarn start
-// 
-
 const Stack = createNativeStackNavigator();
 
 const App = () => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
 
-const Splash = ({ navigation }: any) => {
+const SplashScreen = ({ navigation }: any) => {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Splash;
+export default SplashScreen;

@@ -5,7 +5,7 @@ import MapClick from "./components/MapClick";
 import Category from "./components/Category";
 import Sugestions from "./components/Sugestions";
 
-export default function Home() {
+export default function HomeScreen() {
   return (
     <HomeContainer showsVerticalScrollIndicator={false}>
       <SectionHeader>

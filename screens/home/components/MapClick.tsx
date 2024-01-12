@@ -11,7 +11,7 @@ export default function MapClick({onPress}: {onPress?: () => void }) {
     <ContainerBgImage>
       <BgImage source={ImgMap as any} />
       <AllPositionContainer>
-        <TouchableOpacity style={{ alignItems: "center", justifyContent: "center" }} onPress={onPress}>
+        <TouchableOpacity style={{ alignItems: "center", justifyContent: "center" }} onPress={onPress} activeOpacity={.8}>
           <PositionCard>
             <Ionicons
               name="location"

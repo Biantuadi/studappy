@@ -63,7 +63,7 @@ export const mapStyle = [
       "elementType": "geometry",
       "stylers": [
         {
-          "color": "#e5e5e5"  // Fond des parcs
+          "color": "#e5e5e5"  // Fond des parcs //* pour les mettre en vert : #a9de83
         }
       ]
     },

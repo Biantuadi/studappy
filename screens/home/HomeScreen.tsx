@@ -4,8 +4,40 @@ import { StatusBar } from "expo-status-bar";
 import MapClick from "./components/MapClick";
 import Category from "./components/Category";
 import Sugestions from "./components/Sugestions";
+import { useNavigation } from "@react-navigation/native";
+import * as Location from 'expo-location';
+import { useEffect } from "react";
+import { RootStackParamList } from "../../types/app.types";
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+
+
+
 
 export default function HomeScreen() {
+  type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Accueil'>;
+const navigation = useNavigation<NavigationProp>();
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        console.error('Permission to access location was denied');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      // Vous pouvez maintenant passer cette localisation à MapScreen
+    })();
+  }, []);
+  
+
+  const handleMapClick = async () => {
+    const location = await Location.getCurrentPositionAsync({});
+    navigation.navigate('Map', { location });
+  };
+  
+
   return (
     <HomeContainer showsVerticalScrollIndicator={false}>
       <SectionHeader>
@@ -20,7 +52,9 @@ export default function HomeScreen() {
 
       <ContainerCategories>
         <GroupeCategories>
-          <Category text="Bons Plans" iconName="pricetags" />
+          {/* onclick navigate to map */}
+          <Category text="Bons Plans" iconName="pricetags" onClick={handleMapClick} />
+
           <Category text="WebOffers" iconName="globe" />
         </GroupeCategories>
 

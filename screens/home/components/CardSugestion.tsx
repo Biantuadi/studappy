@@ -61,7 +61,7 @@ const CardText = styled.View`
 
 const CardTextTitle = styled.Text`
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
 `;
 
 const CardTextSubTitle = styled.Text`

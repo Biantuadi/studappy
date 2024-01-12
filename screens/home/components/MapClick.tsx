@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import ImgMap from "../../assets/images/map_1.png";
+import ImgMap from "../../../assets/images/map_1.png";
 
 export default function MapClick() {
   return (

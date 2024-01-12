@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { Ionicons } from "@expo/vector-icons";
+import CardSuggestion from "./CardSugestion";
 
 export default function Sugestions() {
   return (
@@ -12,6 +13,12 @@ export default function Sugestions() {
           color="#000"
         />
       </ContainerTitle>
+
+      <CardSuggestion image="https://www.aproposdecriture.com/wp-content/uploads/2019/07/Vacances.jpg" title="Aide pour partir en vacance" subtitle="Délivrée par l'Etat" titleRequis="18 - 25 ans" price={250} />
+
+      <CardSuggestion image="https://www.studycdn.space/sites/default/files/2022-10/arton105384.jpg" title="financement du permis B" subtitle="Délivrée par l'Etat" titleRequis="Alternants" price={500} />
+
+      
     </SugestionsStyled>
   );
 }

@@ -1,10 +1,9 @@
 import styled from "styled-components/native";
 import Header from "../../components/layouts/Header";
 import { StatusBar } from "expo-status-bar";
-import MapClick from "./MapClick";
-import Category from "./Category";
-import { View } from "react-native";
-import Sugestions from "./Sugestions";
+import MapClick from "./components/MapClick";
+import Category from "./components/Category";
+import Sugestions from "./components/Sugestions";
 
 export default function Home() {
   return (

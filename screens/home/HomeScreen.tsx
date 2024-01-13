@@ -23,34 +23,31 @@ export default function HomeScreen({ route }: any) {
   };
 
   return (
-    <HomeContainer
-      showsVerticalScrollIndicator={false}
-    >
-      <SafeAreaView
-        style={{ flex: 0, backgroundColor: "#1d1c1b" }}
-      />
-      <SectionHeader>
-        <Header />
-        <AcrrocheTextContainer>
-          <TextTitle>Studappy votre</TextTitle>
-          <TextTitle>Compagnon Etudiant !</TextTitle>
-        </AcrrocheTextContainer>
-        <MapClick onPress={handleMapClick} />
-      </SectionHeader>
-      <ContainerCategories>
-        <GroupeCategories>
-          {/* onclick navigate to map */}
-          <Category text="Bons Plans" iconName="pricetags" onClick={handleMapClick} />
-          <Category text="WebOffers" iconName="globe" />
-        </GroupeCategories>
-        <GroupeCategories>
-          <Category text="Aides d'État" iconName="cash" />
-          <Category text="Evenements" iconName="calendar" />
-        </GroupeCategories>
-      </ContainerCategories>
-      <Sugestions />
-      <StatusBar style="light" backgroundColor="#1d1c1b" />
-    </HomeContainer>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#1d1c1b" }}>
+      <HomeContainer showsVerticalScrollIndicator={false}>
+        <SectionHeader>
+          <Header />
+          <AcrrocheTextContainer>
+            <TextTitle>Studappy votre</TextTitle>
+            <TextTitle>Compagnon Étudiant !</TextTitle>
+          </AcrrocheTextContainer>
+          <MapClick onPress={handleMapClick} />
+        </SectionHeader>
+        <ContainerCategories>
+          <GroupeCategories>
+            {/* onclick navigate to map */}
+            <Category text="Bons Plans" iconName="pricetags" onClick={handleMapClick} />
+            <Category text="WebOffers" iconName="globe" />
+          </GroupeCategories>
+          <GroupeCategories>
+            <Category text="Aides d'État" iconName="cash" />
+            <Category text="Événements" iconName="calendar" />
+          </GroupeCategories>
+        </ContainerCategories>
+        <Sugestions />
+        <StatusBar style="light" backgroundColor="#1d1c1b" />
+      </HomeContainer>
+    </SafeAreaView>
   );
 }
 

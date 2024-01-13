@@ -24,7 +24,7 @@ const SplashScreen = ({ navigation }: any) => {
         }
 
         // Obtenez la localisation une fois que la permission est accordée.
-        let currentLocation: any = await Location.getCurrentPositionAsync({});
+        let currentLocation: any = await getLocationWithTimeout(3000);
         setLocation(currentLocation);
 
         // Autres tâches de chargement
@@ -35,6 +35,27 @@ const SplashScreen = ({ navigation }: any) => {
       } finally {
         setIsReady(true);
       }
+    };
+
+    const getLocationWithTimeout = async (timeout: number) => {
+      return new Promise<any>(async (resolve) => {
+        let timerId = setTimeout(() => {
+          console.log("Timeout - Impossible d'obtenir la localisation après 3 secondes.");
+          clearTimeout(timerId);
+          resolve(null); // Résoudre avec une localisation nulle en cas de dépassement du délai.
+        }, timeout);
+
+        try {
+          // Obtenez la localisation dans le délai spécifié.
+          let currentLocation: any = await Location.getCurrentPositionAsync({});
+          clearTimeout(timerId); // Effacez le délai si la localisation est obtenue avec succès.
+          resolve(currentLocation);
+        } catch (error) {
+          console.error("Erreur lors de l'obtention de la localisation :", error);
+          clearTimeout(timerId); // Effacez le délai en cas d'erreur.
+          resolve(null);
+        }
+      });
     };
 
     initializeApp();

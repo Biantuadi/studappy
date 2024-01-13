@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import MapView, { Marker } from "react-native-maps";
 import { mapStyle } from "../../theme/map.style";
 import customMarkerImage from "../../assets/images/my_position2.png";
-import { Image, Platform } from "react-native";
+import { Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import Food from "../../assets/icons/icon_repas.png";
 import SalonCoiffure from "../../assets/icons/salon_de_coiffure.png";
@@ -16,18 +16,24 @@ export default function MapScreen({ route }: any) {
     <MapScreenContainer>
       <StatusBar translucent backgroundColor="transparent" />
       <MenuMapContainer>
-        <MenuMapCard image={Food} text="Repas" />
+        <MenuMapCard image={Food} text="Repas" onTap={() => {}} />
         <MenuMapCard image={SalonCoiffure} text="Coiffure" />
       </MenuMapContainer>
       <MapView
         customMapStyle={mapStyle as any}
-        style={{ alignSelf: "stretch", height: "100%" }}
+        style={{ 
+          width: "100%",
+          height: "100%",
+          alignSelf: "stretch",
+        }}
         initialRegion={{
           latitude: location.coords.latitude,
           longitude: location.coords.longitude,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
+        showsCompass={false}
+        // compassOffset={{ x: -10, y: 500 }}
       >
         <Marker
           coordinate={{

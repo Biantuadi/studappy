@@ -5,28 +5,19 @@ import * as Location from 'expo-location';
 const SplashScreen = ({ navigation }: any) => {
   const [isReady, setIsReady] = useState(false);
   const [location, setLocation] = useState(null);
-  const [permissionMessage, setPermissionMessage] = useState("Chargement en cours...");
 
   useEffect(() => {
     const initializeApp = async () => {
       try {
-        let { status } = await Location.getForegroundPermissionsAsync();
-
+        let { status } = await Location.requestForegroundPermissionsAsync();
         if (status !== 'granted') {
-          // Si la permission n'est pas déjà accordée, demandez-la.
-          let { status: newStatus } = await Location.requestForegroundPermissionsAsync();
-          
-          if (newStatus !== 'granted') {
-            console.error('Permission to access location was denied');
-            setPermissionMessage("Veuillez autoriser l'accès à la localisation pour utiliser l'application.");
-            return;
-          }
+          console.error('Permission to access location was denied');
+          return;
         }
-
-        // Obtenez la localisation une fois que la permission est accordée.
-        let currentLocation: any = await getLocationWithTimeout(3000);
+        
+        let currentLocation:any = await Location.getCurrentPositionAsync({});
         setLocation(currentLocation);
-
+        
         // Autres tâches de chargement
         // ...
         
@@ -35,27 +26,6 @@ const SplashScreen = ({ navigation }: any) => {
       } finally {
         setIsReady(true);
       }
-    };
-
-    const getLocationWithTimeout = async (timeout: number) => {
-      return new Promise<any>(async (resolve) => {
-        let timerId = setTimeout(() => {
-          console.log("Timeout - Impossible d'obtenir la localisation après 3 secondes.");
-          clearTimeout(timerId);
-          resolve(null); // Résoudre avec une localisation nulle en cas de dépassement du délai.
-        }, timeout);
-
-        try {
-          // Obtenez la localisation dans le délai spécifié.
-          let currentLocation: any = await Location.getCurrentPositionAsync({});
-          clearTimeout(timerId); // Effacez le délai si la localisation est obtenue avec succès.
-          resolve(currentLocation);
-        } catch (error) {
-          console.error("Erreur lors de l'obtention de la localisation :", error);
-          clearTimeout(timerId); // Effacez le délai en cas d'erreur.
-          resolve(null);
-        }
-      });
     };
 
     initializeApp();
@@ -70,10 +40,10 @@ const SplashScreen = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       {isReady ? (
-        <Text>{permissionMessage}</Text>
+        <Text>Chargement terminé</Text>
       ) : (
         <>
-          <Text>{permissionMessage}</Text>
+          <Text>Chargement en cours...</Text>
           <ActivityIndicator size="large" />
         </>
       )}

@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components/native";
 import Header from "../../components/layouts/Header";
 import { StatusBar } from "expo-status-bar";
@@ -24,7 +25,7 @@ export default function HomeScreen({ route }: any) {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#1d1c1b" }}>
-      <HomeContainer showsVerticalScrollIndicator={false}>
+      <HomeContainer showsVerticalScrollIndicator={false} automaticallyAdjustContentInsets={false} contentContainerStyle={{ paddingTop: 0 }}>
         <SectionHeader>
           <Header />
           <AcrrocheTextContainer>

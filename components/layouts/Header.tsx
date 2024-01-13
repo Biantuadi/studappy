@@ -25,11 +25,7 @@ const HeaderContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* padding: 20px 10px; */
-  /* padding-top: 30px; */
-
-  
-  `;
+`;
 
 const ProfilInfoCOntainer = styled.View`
   flex-direction: row;

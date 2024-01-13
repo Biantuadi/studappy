@@ -10,10 +10,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen({ route }: any) {
-  type NavigationProp = NativeStackNavigationProp<
-    RootStackParamList,
-    "Accueil"
-  >;
+  type NavigationProp = NativeStackNavigationProp<RootStackParamList, "Accueil">;
   const navigation = useNavigation<NavigationProp>();
   const location = route.params?.location;
 
@@ -26,41 +23,34 @@ export default function HomeScreen({ route }: any) {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <HomeContainer showsVerticalScrollIndicator={false}>
-        <SectionHeader>
-          <Header />
-          <AcrrocheTextContainer>
-            <TextTitle>Studappy votre</TextTitle>
-            <TextTitle>Compagnon Etudiant !</TextTitle>
-          </AcrrocheTextContainer>
-      
-          <MapClick onPress={handleMapClick} />
-        </SectionHeader>
-      
-        <ContainerCategories>
-          <GroupeCategories>
-            {/* onclick navigate to map */}
-            <Category
-              text="Bons Plans"
-              iconName="pricetags"
-              onClick={handleMapClick}
-            />
-      
-            <Category text="WebOffers" iconName="globe" />
-          </GroupeCategories>
-      
-          <GroupeCategories>
-            <Category text="Aides d'État" iconName="cash" />
-            <Category text="Evenements" iconName="calendar" />
-          </GroupeCategories>
-        </ContainerCategories>
-      
-        <Sugestions />
-      
-        <StatusBar style="light" backgroundColor="#1d1c1b" />
-      </HomeContainer>
-    </SafeAreaView>
+    <HomeContainer
+      showsVerticalScrollIndicator={false}
+    >
+      <SafeAreaView
+        style={{ flex: 0, backgroundColor: "#1d1c1b" }}
+      />
+      <SectionHeader>
+        <Header />
+        <AcrrocheTextContainer>
+          <TextTitle>Studappy votre</TextTitle>
+          <TextTitle>Compagnon Etudiant !</TextTitle>
+        </AcrrocheTextContainer>
+        <MapClick onPress={handleMapClick} />
+      </SectionHeader>
+      <ContainerCategories>
+        <GroupeCategories>
+          {/* onclick navigate to map */}
+          <Category text="Bons Plans" iconName="pricetags" onClick={handleMapClick} />
+          <Category text="WebOffers" iconName="globe" />
+        </GroupeCategories>
+        <GroupeCategories>
+          <Category text="Aides d'État" iconName="cash" />
+          <Category text="Evenements" iconName="calendar" />
+        </GroupeCategories>
+      </ContainerCategories>
+      <Sugestions />
+      <StatusBar style="light" backgroundColor="#1d1c1b" />
+    </HomeContainer>
   );
 }
 

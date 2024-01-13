@@ -5,19 +5,28 @@ import * as Location from 'expo-location';
 const SplashScreen = ({ navigation }: any) => {
   const [isReady, setIsReady] = useState(false);
   const [location, setLocation] = useState(null);
+  const [permissionMessage, setPermissionMessage] = useState("Chargement en cours...");
 
   useEffect(() => {
     const initializeApp = async () => {
       try {
-        let { status } = await Location.requestForegroundPermissionsAsync();
+        let { status } = await Location.getForegroundPermissionsAsync();
+
         if (status !== 'granted') {
-          console.error('Permission to access location was denied');
-          return;
+          // Si la permission n'est pas déjà accordée, demandez-la.
+          let { status: newStatus } = await Location.requestForegroundPermissionsAsync();
+          
+          if (newStatus !== 'granted') {
+            console.error('Permission to access location was denied');
+            setPermissionMessage("Veuillez autoriser l'accès à la localisation pour utiliser l'application.");
+            return;
+          }
         }
-        
-        let currentLocation:any = await Location.getCurrentPositionAsync({});
+
+        // Obtenez la localisation une fois que la permission est accordée.
+        let currentLocation: any = await Location.getCurrentPositionAsync({});
         setLocation(currentLocation);
-        
+
         // Autres tâches de chargement
         // ...
         
@@ -40,10 +49,10 @@ const SplashScreen = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       {isReady ? (
-        <Text>Chargement terminé</Text>
+        <Text>{permissionMessage}</Text>
       ) : (
         <>
-          <Text>Chargement en cours...</Text>
+          <Text>{permissionMessage}</Text>
           <ActivityIndicator size="large" />
         </>
       )}

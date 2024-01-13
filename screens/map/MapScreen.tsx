@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import MapView, { Marker } from "react-native-maps";
+import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
 import { mapStyle } from "../../theme/map.style";
 import customMarkerImage from "../../assets/images/my_position2.png";
 import { Image } from "react-native";
@@ -20,6 +20,7 @@ export default function MapScreen({ route }: any) {
         <MenuMapCard image={SalonCoiffure} text="Coiffure" />
       </MenuMapContainer>
       <MapView
+        provider={PROVIDER_DEFAULT}
         customMapStyle={mapStyle as any}
         style={{ 
           flex: 1,

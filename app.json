@@ -33,7 +33,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.kevin0033.studappy"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "66669cf7-07f3-4a1d-9ee8-dc7ea25a0fed"
       }
+    },
+    "owner": "kevin0033",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/66669cf7-07f3-4a1d-9ee8-dc7ea25a0fed"
     }
   }
 }

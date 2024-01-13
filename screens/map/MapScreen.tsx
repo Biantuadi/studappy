@@ -22,9 +22,10 @@ export default function MapScreen({ route }: any) {
       <MapView
         customMapStyle={mapStyle as any}
         style={{ 
+          flex: 1,
+          // alignSelf: "stretch", // ca veut dire que ça 
           width: "100%",
           height: "100%",
-          alignSelf: "stretch",
         }}
         initialRegion={{
           latitude: location.coords.latitude,
@@ -33,7 +34,6 @@ export default function MapScreen({ route }: any) {
           longitudeDelta: 0.0421,
         }}
         showsCompass={false}
-        // compassOffset={{ x: -10, y: 500 }}
       >
         <Marker
           coordinate={{

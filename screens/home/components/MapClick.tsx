@@ -13,19 +13,13 @@ export default function MapClick({onPress}: {onPress?: () => void }) {
       <AllPositionContainer>
         <TouchableOpacity style={{ alignItems: "center", justifyContent: "center" }} onPress={onPress} activeOpacity={.8}>
           <PositionCard>
+            <ContainerIcon>
             <Ionicons
               name="location"
               size={24}
               color="#A7ADB7"
-              style={{
-                backgroundColor: "#fff",
-                borderRadius: 30,
-                width: 40,
-                height: 40,
-                textAlign: "center",
-                textAlignVertical: "center",
-              }}
             />
+            </ContainerIcon>
             <PositionContainerText>
               <PositionText style={{ color: "#A7ADB7" }}>
                 Appuyer pour
@@ -85,19 +79,11 @@ const PositionText = styled.Text`
   color: #fff;
 `;
 
-const ContainerPosition = styled.View`
-  justify-content: center;
+const ContainerIcon = styled.View`
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 20px;
   align-items: center;
-  background: rgba(3, 34, 80, 0.2);
-  border-radius: 50px;
-  width: 50px;
-  height: 50px;
-`;
-
-const Dot = styled.View`
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  border: 2px solid #fff;
-  background-color: #1d1f24;
+  justify-content: center;
 `;

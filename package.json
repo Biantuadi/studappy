@@ -6,7 +6,11 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "git:amend": "git add --all && git commit --amend --no-edit && git push -f",
+    "deploy:with:commit": "eas update --channel development --message 'chore: publish to prod'",
+    "deploy:without:commit": "eas update --channel development"
+
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",

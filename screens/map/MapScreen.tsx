@@ -8,20 +8,6 @@ import { StatusBar } from "expo-status-bar";
 import MenuMapCard from "../../components/MenuMapCard";
 import Food from "../../assets/icons/icon_repas.png";
 import SalonCoiffure from "../../assets/icons/salon_de_coiffure.png";
-// il faut ajouter :
-// repas
-// Salon de coiffure
-// salle de sport
-// magasin de vetement
-// bar
-// librairie
-// musée
-// Café
-// Salon de beauté
-// Bar
-// Musée
-// théâtre
-// cinéma
 
 const menuCards = [
   {
@@ -44,9 +30,6 @@ export default function MapScreen({ route }: any) {
   const handleActiveCard = (id: number) => {
     setActiveCard(id);
   }
-
-
-
 
   return (
     <MapScreenContainer>

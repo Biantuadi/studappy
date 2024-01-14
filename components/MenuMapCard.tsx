@@ -39,7 +39,8 @@ const MenuMapCardStyled = styled.TouchableOpacity`
   padding: 7px 15px;
   flex-direction: row;
   align-items: center;
-  margin-right: 20px;
+  margin: 5px 20px 5px 5px;
+
   ${mainTheme.platformShadow}
 `;
 

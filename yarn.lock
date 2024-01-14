@@ -5589,7 +5589,7 @@ react-is@^18.0.0:
 
 react-native-maps@^1.9.1:
   version "1.9.1"
-  resolved "https://registry.npmjs.org/react-native-maps/-/react-native-maps-1.9.1.tgz"
+  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-1.9.1.tgz#b7a3968d5463b2232c4fd9df84a1d387232ccf5f"
   integrity sha512-bYdwvru5L3bwHo9a/tPpMQnI6eRN6BNjMTxjiDbd6t01mUA0+8e7nCSfgHEm9s3Zq7X2xHf6gjgk2bOXj5Z3IQ==
   dependencies:
     "@types/geojson" "^7946.0.13"

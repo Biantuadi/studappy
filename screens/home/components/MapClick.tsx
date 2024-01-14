@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import ImgMap from "../../../assets/images/map_1.png";
 import { Ionicons } from "@expo/vector-icons";
-import { TouchableOpacity, View } from "react-native";
+import { TouchableOpacity } from "react-native";
 import Shape from "../../../assets/images/shape.png";
 import { Image } from "react-native";
 import MyPositionAnim from "./MyPositionAnim";
@@ -28,7 +28,6 @@ export default function MapClick({onPress}: {onPress?: () => void }) {
             </PositionContainerText>
           </PositionCard>
           {/* icon chevron bas solid noir */}
-          {/* <Ionicons name="chevron-down" size={24} color="#000" /> */}
           <Image source={Shape as any} width={84} height={84} />
         </TouchableOpacity>
 

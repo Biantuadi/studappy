@@ -1,6 +1,6 @@
 import React from "react";
-import { Platform } from "react-native";
 import styled from "styled-components/native";
+import { mainTheme } from "../theme/main.theme";
 
 type MenuMapCardProps = {
   image: any;
@@ -40,14 +40,7 @@ const MenuMapCardStyled = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   margin-right: 20px;
-  ${Platform.OS === "android"
-    ? `elevation: 3; background-color: #fff;`
-    : `
-       shadowColor: #000;
-       shadowOffset: { width: 0, height: 0 };
-       shadowOpacity: 0.2;
-       shadowRadius: 10px;
-    `}
+  ${mainTheme.platformShadow}
 `;
 
 const MenuMapCardImage = styled.Image`

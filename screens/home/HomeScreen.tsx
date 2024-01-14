@@ -8,6 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "../../types/app.types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { mainTheme } from "../../theme/main.theme";
 
 export default function HomeScreen({ route }: any) {
   type NavigationProp = NativeStackNavigationProp<RootStackParamList, "Accueil">;
@@ -23,7 +24,7 @@ export default function HomeScreen({ route }: any) {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#1d1c1b" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: mainTheme.colors.primary }}>
       <HomeContainer 
       showsVerticalScrollIndicator={false}
       refreshControl={null as any}
@@ -55,7 +56,7 @@ export default function HomeScreen({ route }: any) {
         {/* sugesstion sectio */}
         <Sugestions />
 
-        <StatusBar style="light" backgroundColor="#1d1c1b" />
+        <StatusBar style="light" backgroundColor={mainTheme.colors.primary} />
       </HomeContainer>
     </SafeAreaView>
   );
@@ -63,11 +64,11 @@ export default function HomeScreen({ route }: any) {
 
 const HomeContainer = styled.ScrollView`
   flex: 1;
-  background-color: #f8fafb;
+  background-color: ${mainTheme.colors.secondary};
 `;
 
 const SectionHeader = styled.View`
-  background-color: #1d1c1b;
+  background-color: ${mainTheme.colors.primary};
   padding: 20px 15px 0 15px;
   height: 320px;
 `;
@@ -78,7 +79,7 @@ const AcrrocheTextContainer = styled.View`
 
 const TextTitle = styled.Text`
   font-size: 25px;
-  color: #fff;
+  color: ${mainTheme.colors.white};
   font-weight: bold;
 `;
 

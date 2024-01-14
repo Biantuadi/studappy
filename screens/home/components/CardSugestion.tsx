@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/native';
+import { mainTheme } from '../../../theme/main.theme';
 
 type CardSuggestionProps = {
     image: string;
@@ -41,7 +42,7 @@ export default function CardSuggestion( {image, title, subtitle, titleRequis, pr
 
 
 const CardSuggestionStyled = styled.View`
-  background-color: #fff;
+  background-color: ${mainTheme.colors.white};
   border-radius: 10px;
   margin-top: 20px;
   padding: 10px;
@@ -66,7 +67,7 @@ const CardTextTitle = styled.Text`
 
 const CardTextSubTitle = styled.Text`
   font-size: 14px;
-  color: #a4a4a4;
+  color: ${mainTheme.colors.gray};
 `;
 
 const CardPriceText = styled.Text`

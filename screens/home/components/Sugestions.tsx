@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import { Ionicons } from "@expo/vector-icons";
 import CardSuggestion from "./CardSugestion";
+import { mainTheme } from "../../../theme/main.theme";
 
 export default function Sugestions() {
   return (
@@ -10,7 +11,7 @@ export default function Sugestions() {
         <Ionicons
           name="flash"
           size={22}
-          color="#000"
+          color={mainTheme.colors.black}
         />
       </ContainerTitle>
 

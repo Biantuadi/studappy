@@ -1,11 +1,12 @@
-import { Platform, Text, View } from "react-native";
+import {View } from "react-native";
 import styled from "styled-components/native";
 import Food from "../../assets/icons/icon_repas.png";
+import { mainTheme } from "../../theme/main.theme";
 
 export default function BonsPlansScreen() {
   return (
     <BonsPlansScreenContainer>
-      <View style={{alignItems: "flex-start",  justifyContent: "flex-start"}}>
+      <View>
         <TextAcroche>Choisissez une</TextAcroche>
         <TextAcroche>catégorie</TextAcroche>
       </View>
@@ -24,7 +25,6 @@ export default function BonsPlansScreen() {
           <TextCard>Repas</TextCard>
         </CardBonPlan>
 
-        {/* Ajoutez ici d'autres cartes selon le même modèle */}
       </CardsContainer>
     </BonsPlansScreenContainer>
   );
@@ -32,7 +32,7 @@ export default function BonsPlansScreen() {
 
 const BonsPlansScreenContainer = styled.SafeAreaView`
   flex: 1;
-  background-color: #fff;
+  background-color: ${mainTheme.colors.white};
   padding: 50px 15px 0 15px;
   gap: 35px;
 `;
@@ -40,7 +40,6 @@ const BonsPlansScreenContainer = styled.SafeAreaView`
 const TextAcroche = styled.Text`
   font-size: 30px;
   font-weight: bold;
-  /* margin: 20px 0; */
 `;
 
 const CardsContainer = styled.View`
@@ -53,20 +52,13 @@ const CardsContainer = styled.View`
 const CardBonPlan = styled.View`
   width: 30%; /* Utilisation de pourcentage pour l'adaptabilité */
   aspect-ratio: .8; /* Assure que la carte a un ratio hauteur/largeur de 1:1 */
-  background-color: #fff;
+  background-color: ${mainTheme.colors.white};
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 10px;
   align-items: center;
   justify-content: center;
-  ${Platform.OS === "android"
-    ? `elevation: 3; background-color: #fff;`
-    : `
-       shadowColor: #000;
-       shadowOffset: { width: 0, height: 0 };
-       shadowOpacity: 0.2;
-       shadowRadius: 10px;
-    `}
+  ${mainTheme.platformShadow}
 `;
 
 const ImageBonPlan = styled.Image`

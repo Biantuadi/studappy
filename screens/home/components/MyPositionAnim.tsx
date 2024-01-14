@@ -2,32 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import styled from 'styled-components/native';
 
-const ContainerPosition = styled.View`
-  justify-content: center;
-  align-items: center;
-  background: rgba(3, 34, 80, 0.2);
-  border-radius: 50px;
-  width: 50px;
-  height: 50px;
-  overflow: hidden; 
-`;
-
-const Dot = styled.View`
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  border: 2px solid #fff;
-  background-color: #1d1f24;
-`;
-
-const AnimatedView = Animated.createAnimatedComponent(styled.View`
-  position: absolute;
-  border-radius: 25px;
-  background-color: #1d1f2433;
-  width: 50px;  
-  height: 50px; 
-  opacity: 0;
-`);
 
 const MyPositionAnim = () => {
   const animation = useRef(new Animated.Value(0)).current;
@@ -54,5 +28,33 @@ const MyPositionAnim = () => {
     </ContainerPosition>
   );
 };
+
+
+const ContainerPosition = styled.View`
+  justify-content: center;
+  align-items: center;
+  background: rgba(3, 34, 80, 0.2);
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden; 
+`;
+
+const Dot = styled.View`
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  background-color: #1d1f24;
+`;
+
+const AnimatedView = Animated.createAnimatedComponent(styled.View`
+  position: absolute;
+  border-radius: 25px;
+  background-color: #1d1f2433;
+  width: 50px;  
+  height: 50px; 
+  opacity: 0;
+`);
 
 export default MyPositionAnim;

@@ -4,15 +4,15 @@ import { Ionicons } from '@expo/vector-icons';
 type CategoryProps = {
   iconName: string;
   text: string;
-  onClick?: () => void;
+  onPress?: () => void;
 }
 
-export default function Category({iconName, text, onClick} : CategoryProps) {
+export default function Category({iconName, text, onPress} : CategoryProps) {
   return (
         <ContainerCategory 
         // retirer l'opacité d'onpress 
         activeOpacity={.8}
-        onPress={onClick}
+        onPress={onPress}
         >
             <Ionicons name={iconName as any} size={22} color="rgba(225, 225, 225, 0.4)" />
           <CategoryText>{text}</CategoryText>

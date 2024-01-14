@@ -39,7 +39,11 @@ export default function HomeScreen({ route }: any) {
         <ContainerCategories>
           <GroupeCategories>
             {/* onclick navigate to map */}
-            <Category text="Bons Plans" iconName="pricetags" onClick={handleMapClick} />
+            <Category 
+            text="Bons Plans" 
+            iconName="pricetags"
+            onPress={() => navigation.navigate("BonsPlans")}
+             />
             <Category text="WebOffers" iconName="globe" />
           </GroupeCategories>
           <GroupeCategories>
@@ -47,7 +51,10 @@ export default function HomeScreen({ route }: any) {
             <Category text="Événements" iconName="calendar" />
           </GroupeCategories>
         </ContainerCategories>
+        
+        {/* sugesstion sectio */}
         <Sugestions />
+
         <StatusBar style="light" backgroundColor="#1d1c1b" />
       </HomeContainer>
     </SafeAreaView>

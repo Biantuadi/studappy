@@ -5,15 +5,30 @@ import styled from "styled-components/native";
 type MenuMapCardProps = {
   image: any;
   text: string;
-  onTap?: () => void;
+  onPress?: () => void;
+  active?: boolean;
 };
 
-export default function MenuMapCard({ image, text, onTap }: MenuMapCardProps) {
+export default function MenuMapCard({
+  image,
+  text,
+  onPress,
+  active,
+}: MenuMapCardProps) {
   return (
-    <MenuMapCardStyled onPress={onTap} activeOpacity={.9} style={onTap ? { backgroundColor: "#1d1c1b" } : {}}>
+    <MenuMapCardStyled
+      activeOpacity={0.9}
+      onPress={onPress}
+      style={{ backgroundColor: active ? "#1d1c1b" : "#fff" }}
+    >
       <MenuMapCardImage source={image as any} />
-      <MenuMapCardText style={onTap ? { color: "#fff" } : {}}
-      >{text}</MenuMapCardText>
+      <MenuMapCardText
+        style={{
+          color: active ? "#fff" : "#000",
+        }}
+      >
+        {text}
+      </MenuMapCardText>
     </MenuMapCardStyled>
   );
 }
@@ -24,6 +39,7 @@ const MenuMapCardStyled = styled.TouchableOpacity`
   padding: 7px 15px;
   flex-direction: row;
   align-items: center;
+  margin-right: 20px;
   ${Platform.OS === "android"
     ? `elevation: 3; background-color: #fff;`
     : `

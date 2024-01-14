@@ -1,9 +1,9 @@
 import styled from "styled-components/native";
 import Header from "../../components/layouts/Header";
 import { StatusBar } from "expo-status-bar";
-import MapClick from "./components/MapClick";
-import Category from "./components/Category";
-import Sugestions from "./components/Sugestions";
+import MapClick from "./inactif_map/MapClick";
+import Category from "./categories/Category";
+import Sugestions from "./suggestion/Sugestions";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "../../types/app.types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";

@@ -1,7 +1,9 @@
 import {View } from "react-native";
 import styled from "styled-components/native";
-import Food from "../../assets/icons/icon_repas.png";
 import { mainTheme } from "../../theme/main.theme";
+import Food from "../../assets/icons/icon_repas.png";
+import CoupeClassique from "../../assets/icons/classique_coupe.png";
+import CoupeAfro from "../../assets/icons/afro_coupe.png";
 
 export default function BonsPlansScreen() {
   return (
@@ -17,12 +19,13 @@ export default function BonsPlansScreen() {
           <TextCard>Repas</TextCard>
         </CardBonPlan>
         <CardBonPlan>
-          <ImageBonPlan source={Food as any} />
-          <TextCard>Coupe Afro</TextCard>
+          <ImageBonPlan source={CoupeClassique as any} />
+          <TextCard>Barbershop</TextCard>
         </CardBonPlan>
         <CardBonPlan>
-          <ImageBonPlan source={Food as any} />
-          <TextCard>Repas</TextCard>
+          <ImageBonPlan source={CoupeAfro as any} />
+          <TextCard>
+            Coupe Afro</TextCard>
         </CardBonPlan>
 
       </CardsContainer>
@@ -49,7 +52,7 @@ const CardsContainer = styled.View`
   gap: 10px;
 `;
 
-const CardBonPlan = styled.View`
+const CardBonPlan = styled.TouchableOpacity`
   width: 30%; /* Utilisation de pourcentage pour l'adaptabilité */
   aspect-ratio: .8; /* Assure que la carte a un ratio hauteur/largeur de 1:1 */
   background-color: ${mainTheme.colors.white};

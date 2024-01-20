@@ -8,7 +8,7 @@ import MyPositionAnim from "./MyPositionAnim";
 
 export default function MapClick({onPress}: {onPress?: () => void }) {
   return (
-    <ContainerBgImage>
+    <ContainerBgImage onPress={onPress} activeOpacity={1}>
       <BgImage source={ImgMap as any} />
       <AllPositionContainer>
         <TouchableOpacity style={{ alignItems: "center", justifyContent: "center" }} onPress={onPress} activeOpacity={.8}>
@@ -28,7 +28,8 @@ export default function MapClick({onPress}: {onPress?: () => void }) {
             </PositionContainerText>
           </PositionCard>
           {/* icon chevron bas solid noir */}
-          <Image source={Shape as any} width={84} height={84} />
+          <ChevronIcon source={Shape as any} />
+          
         </TouchableOpacity>
 
         <MyPositionAnim />
@@ -37,7 +38,7 @@ export default function MapClick({onPress}: {onPress?: () => void }) {
   );
 }
 
-const ContainerBgImage = styled.View`
+const ContainerBgImage = styled.TouchableOpacity`
   position: relative;
   align-self: center;
   margin-top: 30px;
@@ -51,10 +52,10 @@ const BgImage = styled.Image`
 
 const AllPositionContainer = styled.View`
   position: absolute;
-  top: 40px;
+  top: 37px;
   right: -30px;
   width: 100%;
-  gap: 10px;
+  gap: 8px;
   justify-content: center;
   align-items: center;
 `;
@@ -85,4 +86,10 @@ const ContainerIcon = styled.View`
   border-radius: 20px;
   align-items: center;
   justify-content: center;
+`;
+
+const ChevronIcon = styled.Image`
+  transform: scale(0.6);
+  margin-top: -2.8px;
+
 `;

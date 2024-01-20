@@ -8,6 +8,7 @@ import { StatusBar } from "expo-status-bar";
 import MenuMapCard from "../../components/MenuMapCard";
 import Food from "../../assets/icons/icon_repas.png";
 import SalonCoiffure from "../../assets/icons/salon_de_coiffure.png";
+import MyPositionAnim from "../home/inactif_map/MyPositionAnim";
 
 const menuCards = [
   {
@@ -40,6 +41,10 @@ export default function MapScreen({ route }: any) {
         />
       
       <MenuMapContainer horizontal showsHorizontalScrollIndicator={false}>
+        {/* 
+        input my position
+         */}
+         
         {menuCards.map((card) => (
           <MenuMapCard
             key={card.id}
@@ -72,10 +77,16 @@ export default function MapScreen({ route }: any) {
             longitude: location.coords.longitude,
           }}
         >
-          <Image
+          {/* <Image
             source={customMarkerImage as any}
             style={{ height: 50, width: 50 }}
             resizeMode="contain"
+          /> */}
+          <MyPositionAnim 
+          style={{ 
+            width: 40,
+            height: 40,
+          }}
           />
         </Marker>
       </MapView>

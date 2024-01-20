@@ -3,7 +3,9 @@ import { Animated } from 'react-native';
 import styled from 'styled-components/native';
 
 
-const MyPositionAnim = () => {
+const MyPositionAnim = (
+  { style }: { style?: any }
+) => {
   const animation = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -22,7 +24,7 @@ const MyPositionAnim = () => {
   });
 
   return (
-    <ContainerPosition>
+    <ContainerPosition style={style}>
       <AnimatedView style={{ opacity }} />
       <Dot />
     </ContainerPosition>

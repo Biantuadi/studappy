@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import { mainTheme } from "../../theme/main.theme";
 import Food from "../../assets/icons/icon_repas.png";
 import CoupeClassique from "../../assets/icons/barbershop.png";
-import CoupeAfro from "../../assets/icons/afro_man.png";
+// import CoupeAfro from "../../assets/icons/afro_man.png";
 import Gym from "../../assets/icons/gym.png";
 import Courses from "../../assets/icons/les_courses.png";
 import Magazin from "../../assets/icons/magazin.png";
@@ -11,6 +11,7 @@ import Cinema from "../../assets/icons/cinema.png";
 import { useNavigation } from "@react-navigation/native";
 import CardCategory from "../../components/CardCategory";
 import { StatusBar } from "expo-status-bar";
+import Apart from "../../assets/icons/apart.png";
 
 export default function BonsPlansScreen() {
   // come back previous screen
@@ -37,11 +38,12 @@ export default function BonsPlansScreen() {
       <CardsContainer>
         <CardCategory title="Repas" image={Food} />
         <CardCategory title="Barbershop" image={CoupeClassique} />
-        <CardCategory title="Coupe Afro" image={CoupeAfro} />
         <CardCategory title="Gym" image={Gym} />
+        <CardCategory title="Cinema" image={Cinema} />
+        {/* <CardCategory title="Coupe Afro" image={CoupeAfro} /> */}
         <CardCategory title="Courses" image={Courses} />
         <CardCategory title="Magazin" image={Magazin} />
-        <CardCategory title="Cinema" image={Cinema} />
+        <CardCategory title="Logements" image={Apart} />
       </CardsContainer>
       <StatusBar style="auto" />
     </BonsPlansScreenContainer>

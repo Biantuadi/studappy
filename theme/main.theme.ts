@@ -19,6 +19,6 @@ export const mainTheme = {
         primary: 'Roboto, sans-serif',
         secondary: 'Roboto, sans-serif',
     },
-    platformShadow: (Platform.OS === "android") ? { elevation: "3", backgroundColor: '#fff' } : { shadowColor: '#000', shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.2, shadowRadius: 10 },
+    platformShadow: (Platform.OS === "android") ? { elevation: "3", backgroundColor: '#fff' } : { shadowColor: '#000', shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.14, shadowRadius: 10 },
 
 }

@@ -9,7 +9,7 @@ type CardBonPlanProps = {
 
 export default function CardCategory({ onPress, title, image }: CardBonPlanProps) {
   return (
-    <CardBonPlan>
+    <CardBonPlan onPress={onPress} activeOpacity={0.6}>
           <ImageBonPlan source={image as any} />
           <TextCard>{title}</TextCard>
         </CardBonPlan>
@@ -18,7 +18,7 @@ export default function CardCategory({ onPress, title, image }: CardBonPlanProps
 
 const CardBonPlan = styled.TouchableOpacity`
   width: 30%; /* Utilisation de pourcentage pour l'adaptabilité */
-  aspect-ratio: .8; /* Assure que la carte a un ratio hauteur/largeur de 1:1 */
+  aspect-ratio: .76; /* Assure que la carte a un ratio hauteur/largeur de 1:1 */
   background-color: ${mainTheme.colors.white};
   border-radius: 10px;
   margin-bottom: 10px;
@@ -35,7 +35,7 @@ const TextCard = styled.Text`
 `;
 
 const ImageBonPlan = styled.Image`
-  width: 75%;
+  width: 72%;
   height: 70%; /* Utilisation de pourcentage pour l'adaptabilité */
   border-radius: 10px;
   object-fit: contain;

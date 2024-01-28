@@ -3,7 +3,6 @@ import styled from "styled-components/native";
 import { mainTheme } from "../../theme/main.theme";
 import Food from "../../assets/icons/icon_repas.png";
 import CoupeClassique from "../../assets/icons/barbershop.png";
-// import CoupeAfro from "../../assets/icons/afro_man.png";
 import Gym from "../../assets/icons/gym.png";
 import Courses from "../../assets/icons/les_courses.png";
 import Magazin from "../../assets/icons/magazin.png";
@@ -16,9 +15,11 @@ import Apart from "../../assets/icons/apart.png";
 export default function BonsPlansScreen() {
   // come back previous screen
   const navigation = useNavigation();
+
   const handleGoBack = () => {
     navigation.goBack();
   };
+  
   return (
     <BonsPlansScreenContainer>
       <AbsoluteBackButton onPress={handleGoBack}>
@@ -45,7 +46,7 @@ export default function BonsPlansScreen() {
         <CardCategory title="Magazin" image={Magazin} />
         <CardCategory title="Logements" image={Apart} />
       </CardsContainer>
-      <StatusBar style="auto" />
+      <StatusBar style="auto" backgroundColor={mainTheme.colors.white}  />
     </BonsPlansScreenContainer>
   );
 }
@@ -53,13 +54,14 @@ export default function BonsPlansScreen() {
 const BonsPlansScreenContainer = styled.SafeAreaView`
   flex: 1;
   background-color: ${mainTheme.colors.white};
-  padding: 50px 15px 0 15px;
+  padding-top: 50px;
   gap: 15px;
 `;
 
 const TextAcroche = styled.Text`
   font-size: 30px;
   font-weight: bold;
+  padding: 0 20px;
 `;
 
 const CardsContainer = styled.View`
@@ -68,8 +70,11 @@ const CardsContainer = styled.View`
   justify-content: space-between;
   gap: 15px;
   margin-top: 20px;
+  padding: 0 20px;
+  background-color: ${mainTheme.colors.white};
 `;
 
 const AbsoluteBackButton = styled.TouchableOpacity`
   z-index: 10;
+  padding: 0 0 0 15px;
 `;

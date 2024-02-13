@@ -28,9 +28,9 @@ export default function CardSuggestion( {image, title, subtitle, titleRequis, pr
           <CardTextSubTitle>
             {subtitle}
           </CardTextSubTitle>
-          <CardTextTitle>
+          <CardTextSubTitle3>
             {titleRequis}
-          </CardTextTitle>
+          </CardTextSubTitle3>
         </CardText>
 
           <CardPriceText>
@@ -42,12 +42,13 @@ export default function CardSuggestion( {image, title, subtitle, titleRequis, pr
 
 
 const CardSuggestionStyled = styled.View`
-  background-color: ${mainTheme.colors.white};
+  /* background-color: ${mainTheme.colors.white}; */
   border-radius: 10px;
   margin-top: 20px;
   padding: 10px;
   flex-direction: row;
   align-items: center;
+  border: 1px solid rgb(242, 244, 247);
 `;
 
 const CardImage = styled.Image`
@@ -68,6 +69,13 @@ const CardTextTitle = styled.Text`
 const CardTextSubTitle = styled.Text`
   font-size: 14px;
   color: ${mainTheme.colors.gray};
+`;
+
+const CardTextSubTitle3 = styled.Text`
+  font-size: 14px;
+  color: ${mainTheme.colors.black};
+  margin-top: 5px;
+  font-weight: bold;
 `;
 
 const CardPriceText = styled.Text`

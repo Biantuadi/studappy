@@ -1,59 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components/native";
 import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
 import { mapStyle } from "../../theme/map.style";
-import customMarkerImage from "../../assets/images/my_position2.png";
-import { Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import MenuMapCard from "../../components/MenuMapCard";
-import Food from "../../assets/icons/icon_repas.png";
-import SalonCoiffure from "../../assets/icons/salon_de_coiffure.png";
 import MyPositionAnim from "../home/inactif_map/MyPositionAnim";
-
-const menuCards = [
-  {
-    id: 1,
-    image: Food,
-    text: "Repas",
-  },
-  {
-    id: 2,
-    image: SalonCoiffure,
-    text: "Coiffure",
-  }
-
-]
+import { mainTheme } from "../../theme/main.theme";
+import { Text } from "react-native";
 
 export default function MapScreen({ route }: any) {
   const { location } = route.params;
-  const [activeCard, setActiveCard] = useState(1);
-
-  const handleActiveCard = (id: number) => {
-    setActiveCard(id);
-  }
 
   return (
     <MapScreenContainer>
-      <StatusBar 
+      {/* <StatusBar 
       translucent
        backgroundColor="transparent" 
       style="dark"
-        />
+        /> */}
+        <StatusBar style="dark" backgroundColor={mainTheme.colors.white} />
+
       
-      <MenuMapContainer horizontal showsHorizontalScrollIndicator={false}>
-        {/* 
-        input my position
-         */}
-         
-        {menuCards.map((card) => (
-          <MenuMapCard
-            key={card.id}
-            image={card.image}
-            text={card.text}
-            active={card.id === activeCard}
-            onPress={() => handleActiveCard(card.id)}
-          />
-        ))}
+      <MenuMapContainer>
+        <Text>Menu</Text>
+
       </MenuMapContainer>
       <MapView
         provider={PROVIDER_DEFAULT}
@@ -77,11 +46,7 @@ export default function MapScreen({ route }: any) {
             longitude: location.coords.longitude,
           }}
         >
-          {/* <Image
-            source={customMarkerImage as any}
-            style={{ height: 50, width: 50 }}
-            resizeMode="contain"
-          /> */}
+          
           <MyPositionAnim 
           style={{ 
             width: 40,
@@ -96,16 +61,20 @@ export default function MapScreen({ route }: any) {
 
 const MapScreenContainer = styled.View`
   flex: 1;
-  justify-content: center;
-  align-items: center;
 `;
 
-const MenuMapContainer = styled.ScrollView`
+const MenuMapContainer = styled.View`
   position: absolute;
-  top: 45px;
-  left: 20px;
+  top: 0;
+  /* left: 20px; */
+  align-self: flex-start;
   z-index: 9;
   width: 100%;
+  /* height: 100px; */
+  padding: 20px;
+  padding-top: 40px;
+  /* background-color: ${mainTheme.colors.white}; */
+  background-color: red;
   
 `;
 

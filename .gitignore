@@ -4,11 +4,20 @@
 node_modules/
 package-lock.json
 .vscode/
+.idea/
+yarn.lock
+package-lock.json
+yarn-error.log
+yarn.lock
 
 # Expo
 .expo/
 dist/
 web-build/
+.expo-shared/
+.cache/
+ios/
+android/
 
 # Native
 *.orig.*

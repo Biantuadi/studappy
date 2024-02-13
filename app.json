@@ -21,7 +21,6 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.myapp",
-      // add splash screen
       "splash": {
         "image": "./assets/splash.png",
         "resizeMode": "contain",
@@ -50,6 +49,9 @@
     },
     "updates": {
       "url": "https://u.expo.dev/66669cf7-07f3-4a1d-9ee8-dc7ea25a0fed"
-    }
+    },
+    "plugins": [
+      "expo-build-properties"
+    ]
   }
 }

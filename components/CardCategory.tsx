@@ -25,7 +25,7 @@ const CardBonPlan = styled.TouchableOpacity`
   padding: 10px;
   align-items: center;
   justify-content: center;
-  ${mainTheme.platformShadow}
+  ${mainTheme.platformShadow(3)}
 `;
 
 const TextCard = styled.Text`

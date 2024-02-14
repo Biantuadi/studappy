@@ -14,11 +14,17 @@ export const mainTheme = {
         white: '#fff',
         black: '#000',
         gray: '#a4a4a4',
+
+        // rajouté
+        colorTest: 'rgb(99, 102, 241)',
     },
     fonts: {
         primary: 'Roboto, sans-serif',
         secondary: 'Roboto, sans-serif',
     },
-    platformShadow: (Platform.OS === "android") ? { elevation: "3", backgroundColor: '#fff' } : { shadowColor: '#000', shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.14, shadowRadius: 10 },
+    platformShadow: (elevation:number)=> (Platform.OS === "android") ? {
+    elevation: elevation.toString(),
+    backgroundColor: '#fff',
+ } : { shadowColor: '#000', shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.14, shadowRadius: 10 },
 
 }

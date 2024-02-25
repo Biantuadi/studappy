@@ -5,29 +5,23 @@ import MapClick from "./inactif_map/MapClick";
 import Category from "./categories/Category";
 import Sugestions from "./suggestion/Sugestions";
 import { useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "../../types/app.types";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { mainTheme } from "../../theme/main.theme";
 
-export default function HomeScreen({ route }: any) {
-  type NavigationProp = NativeStackNavigationProp<RootStackParamList, "Accueil">;
-  const navigation = useNavigation<NavigationProp>();
-  const location = route.params?.location;
+export default function HomeScreen() {
+  const navigation: any = useNavigation();
 
   const handleMapClick = () => {
-    if (location) {
-      navigation.navigate("Map", { location });
-    } else {
-      console.error("Location is not available");
-    }
+    navigation.navigate("Map");
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: mainTheme.colors.primary }}>
-      <HomeContainer 
-      showsVerticalScrollIndicator={false}
-      refreshControl={null as any}
+    <SafeAreaView
+      style={{ flex: 1, backgroundColor: mainTheme.colors.primary }}
+    >
+      <HomeContainer
+        showsVerticalScrollIndicator={false}
+        refreshControl={null as any}
       >
         <SectionHeader>
           <Header />
@@ -40,19 +34,20 @@ export default function HomeScreen({ route }: any) {
         <ContainerCategories>
           <GroupeCategories>
             {/* onclick navigate to map */}
-            <Category 
-            text="Bons Plans" 
-            iconName="pricetags"
-            onPress={() => navigation.navigate("BonsPlans")}
-             />
-            <Category text="WebOffers" iconName="globe" />
+            <Category
+              text="Bons Plans"
+              iconName="pricetags"
+              onPress={() => navigation.navigate("BonsPlans")}
+            />
+            {/* ou abonnements */}
+            <Category text="WebOffers" iconName="card" /> 
           </GroupeCategories>
           <GroupeCategories>
             <Category text="Aides d'État" iconName="cash" />
-            <Category text="Événements" iconName="calendar" />
+            <Category text="e-Shop" iconName="cart" />
           </GroupeCategories>
         </ContainerCategories>
-        
+
         {/* sugesstion sectio */}
         <Sugestions />
 

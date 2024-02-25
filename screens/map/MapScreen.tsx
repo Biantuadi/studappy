@@ -1,19 +1,56 @@
-import React from "react";
-import styled from "styled-components/native";
-import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
-import { mapStyle } from "../../theme/map.style";
+// MapScreen.js
+import React, { useEffect, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import * as Location from "expo-location";
 import { StatusBar } from "expo-status-bar";
-import MyPositionAnim from "../home/inactif_map/MyPositionAnim";
+import styled from "styled-components/native";
 import { mainTheme } from "../../theme/main.theme";
 import ContainerSearch from "./widgets/ContainerSearch";
+import MapComponent from "./widgets/MapComponent";
+import PermissionErrorComponent from "./widgets/PermissionErrorComponent";
 import { Entypo, Ionicons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
 
-export default function MapScreen({ route }: any) {
-  const { location } = route.params;
-  const [isList, setIsList] = React.useState(false);
+const fakeRestaurants = [
+  {
+    id: 1,
+    latitude: 48.8566,
+    longitude: 2.3522,
+    title: "Restaurant 1",
+    description: "Description 1",
+  },
 
+]
+
+const MapScreen = () => {
+  const [isList, setIsList] = useState(false);
+  const [permissionError, setPermissionError] = useState(false);
+  const [location, setLocation] = useState<Location.LocationObject | null>(
+    null
+  );
   const navigation = useNavigation();
+
+  useEffect(() => {
+    const requestLocationPermission = async () => {
+      try {
+        const { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== "granted") {
+          setPermissionError(true);
+        } else {
+          const currentLocation = await Location.getCurrentPositionAsync({});
+          setLocation(currentLocation);
+        }
+      } catch (error) {
+        console.error("Error requesting location permission:", error);
+      }
+    };
+
+    requestLocationPermission();
+  }, []);
+
+  if (permissionError) {
+    return <PermissionErrorComponent />;
+  }
+
   const onPressReturn = () => {
     navigation.goBack();
   };
@@ -94,41 +131,10 @@ export default function MapScreen({ route }: any) {
         </ContainerCategories>
       </MenuMapContainer>
 
-      {!isList && (
-        <MapView
-          provider={PROVIDER_DEFAULT}
-          customMapStyle={mapStyle as any}
-          style={{
-            flex: 1,
-            alignSelf: "stretch",
-            height: "100%",
-          }}
-          initialRegion={{
-            latitude: location.coords.latitude,
-            longitude: location.coords.longitude,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}
-          showsCompass={false}
-        >
-          <Marker
-            coordinate={{
-              latitude: location.coords.latitude,
-              longitude: location.coords.longitude,
-            }}
-          >
-            <MyPositionAnim
-              style={{
-                width: 40,
-                height: 40,
-              }}
-            />
-          </Marker>
-        </MapView>
-      )}
+      {!isList && location && <MapComponent location={location} />}
     </MapScreenContainer>
   );
-}
+};
 
 const MapScreenContainer = styled.View`
   flex: 1;
@@ -182,3 +188,5 @@ const ContainerReturn = styled.TouchableOpacity`
   ${mainTheme.platformShadow(0.6)}
   background-color: ${mainTheme.colors.white};
 `;
+
+export default MapScreen;

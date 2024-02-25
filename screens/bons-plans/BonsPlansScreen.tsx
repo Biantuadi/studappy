@@ -38,12 +38,11 @@ export default function BonsPlansScreen() {
 
       <CardsContainer>
         <CardCategory title="Repas" image={Food} />
+        <CardCategory title="Courses" image={Courses} />
         <CardCategory title="Barbershop" image={CoupeClassique} />
         <CardCategory title="Gym" image={Gym} />
         <CardCategory title="Cinema" image={Cinema} />
-        {/* <CardCategory title="Coupe Afro" image={CoupeAfro} /> */}
-        <CardCategory title="Courses" image={Courses} />
-        <CardCategory title="Magazin" image={Magazin} />
+        <CardCategory title="Magasins" image={Magazin} />
         <CardCategory title="Logements" image={Apart} />
       </CardsContainer>
       <StatusBar style="auto" backgroundColor={mainTheme.colors.white}  />

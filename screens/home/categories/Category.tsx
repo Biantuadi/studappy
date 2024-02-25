@@ -10,14 +10,13 @@ type CategoryProps = {
 
 export default function Category({iconName, text, onPress} : CategoryProps) {
   return (
-        <ContainerCategory 
-        // retirer l'opacité d'onpress 
-        activeOpacity={.8}
-        onPress={onPress}
-        >
-            <Ionicons name={iconName as any} size={22} color="#e1e1e166" />
-          <CategoryText>{text}</CategoryText>
-          {/* icon flech droit > */}
+        <ContainerCategory activeOpacity={.8} onPress={onPress} >
+        
+            <Details>
+              <Ionicons name={iconName as any} size={22} color="#e1e1e166" />
+              <CategoryText>{text}</CategoryText>
+            </Details>
+
           <Ionicons name="chevron-forward" size={22} color={mainTheme.colors.white} />
         </ContainerCategory>
   )
@@ -28,11 +27,19 @@ export default function Category({iconName, text, onPress} : CategoryProps) {
 const ContainerCategory = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
+
   width: 170px;
   gap: 10px;
   background-color: ${mainTheme.colors.primaryLighten};
   padding: 13px 15px;
   border-radius: 15px;
+  justify-content: space-between;
+`;
+
+const Details = styled.View`
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
 `;
 
 const CategoryText = styled.Text`

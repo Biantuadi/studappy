@@ -10,17 +10,6 @@ import MapComponent from "./widgets/MapComponent";
 import PermissionErrorComponent from "./widgets/PermissionErrorComponent";
 import { Entypo, Ionicons } from "@expo/vector-icons";
 
-const fakeRestaurants = [
-  {
-    id: 1,
-    latitude: 48.8566,
-    longitude: 2.3522,
-    title: "Restaurant 1",
-    description: "Description 1",
-  },
-
-]
-
 const MapScreen = () => {
   const [isList, setIsList] = useState(false);
   const [permissionError, setPermissionError] = useState(false);

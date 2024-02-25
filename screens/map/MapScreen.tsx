@@ -1,3 +1,4 @@
+// MapScreen.js
 import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import * as Location from "expo-location";
@@ -6,44 +7,35 @@ import styled from "styled-components/native";
 import { mainTheme } from "../../theme/main.theme";
 import ContainerSearch from "./widgets/ContainerSearch";
 import MapComponent from "./widgets/MapComponent";
+import PermissionErrorComponent from "./widgets/PermissionErrorComponent";
 import { Entypo, Ionicons } from "@expo/vector-icons";
 import { Alert, Platform, ToastAndroid } from "react-native";
 
 const MapScreen = () => {
   const [isList, setIsList] = useState(false);
   const [permissionError, setPermissionError] = useState(false);
-  const [location, setLocation] = useState<Location.LocationObject | null>(null);
+  const [location, setLocation] = useState<Location.LocationObject | null>(
+    null
+  );
   const navigation = useNavigation();
 
-  const requestLocationPermission = async () => {
-    try {
-      let { status } = await Location.getForegroundPermissionsAsync();
-      if (status !== "granted") {
-        status = (await Location.requestForegroundPermissionsAsync()).status;
-      }
-      
-      if (status !== "granted") {
-        setPermissionError(true);
-      } else {
-        const currentLocation = await Location.getCurrentPositionAsync({});
-        setLocation(currentLocation);
-      }
-    } catch (error) {
-      console.error("Error requesting location permission:", error);
-    }
-  };
   useEffect(() => {
+    const requestLocationPermission = async () => {
+      try {
+        const { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== "granted") {
+          setPermissionError(true);
+        } else {
+          const currentLocation = await Location.getCurrentPositionAsync({});
+          setLocation(currentLocation);
+        }
+      } catch (error) {
+        console.error("Error requesting location permission:", error);
+      }
+    };
 
     requestLocationPermission();
   }, []);
-
-  useEffect(() => {
-    const unsubscribe = navigation.addListener("focus", () => {
-      requestLocationPermission();
-    });
-
-    return unsubscribe;
-  }, [navigation]);
 
   if (permissionError) {
     // Navigate to the previous screen

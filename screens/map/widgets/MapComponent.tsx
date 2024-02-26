@@ -1,31 +1,34 @@
 // MapComponent.js
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import MapView, { Marker, PROVIDER_DEFAULT } from 'react-native-maps';
-import styled from 'styled-components/native';
-import { mapStyle } from '../../../theme/map.style';
-import MyPositionAnim from '../../home/inactif_map/MyPositionAnim';
-import { mainTheme } from '../../../theme/main.theme';
+import React from "react";
+import { View, StyleSheet, Image } from "react-native";
+import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
+import styled from "styled-components/native";
+import { mapStyle } from "../../../theme/map.style";
+import MyPositionAnim from "../../home/inactif_map/MyPositionAnim";
+import { mainTheme } from "../../../theme/main.theme";
+import Restaurent from "../../../assets/icons-map/restaurent.png";
 
-const MapComponent = ({ location }: any) => {
+const MapComponent = ({ location, platsData }: any) => {
   return (
     <MapScreenContainer>
       <MapView
         provider={PROVIDER_DEFAULT}
         customMapStyle={mapStyle as any}
         style={styles.map}
-        initialRegion={{
+        region={{
           latitude: location.coords.latitude,
           longitude: location.coords.longitude,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
-        showsCompass={false}>
+        showsCompass={false}
+      >
         <Marker
           coordinate={{
             latitude: location.coords.latitude,
             longitude: location.coords.longitude,
-          }}>
+          }}
+        >
           <MyPositionAnim
             style={{
               width: 40,
@@ -33,6 +36,32 @@ const MapComponent = ({ location }: any) => {
             }}
           />
         </Marker>
+
+        {/* Markers for places */}
+        {/* Render a Marker for each place */}
+        {platsData.map((place: any) => (
+          <Marker
+            key={place.id}
+            coordinate={place.coordinates}
+            title={place.name}
+            description={`${place.cuisine} | Rating: ${place.rating}`}
+          >
+            {/* Conditionally render different icons based on the type of place */}
+            {place.type === "restaurant" ? (
+              <Image
+                source={Restaurent as any}
+                style={{ width: 30, height: 30, objectFit: "contain" }}
+              />
+            ) : (
+              <Image
+                source={{
+                  uri: "https://cdn3d.iconscout.com/3d/premium/thumb/french-fries-4693314-3895628.png?f=webp",
+                }}
+                style={{ width: 30, height: 30 }}
+              />
+            )}
+          </Marker>
+        ))}
       </MapView>
     </MapScreenContainer>
   );
@@ -46,8 +75,8 @@ const MapScreenContainer = styled.View`
 const styles = StyleSheet.create({
   map: {
     flex: 1,
-    alignSelf: 'stretch',
-    height: '100%',
+    alignSelf: "stretch",
+    height: "100%",
   },
 });
 

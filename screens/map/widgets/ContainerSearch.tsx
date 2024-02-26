@@ -1,41 +1,31 @@
-import React from 'react'
-import styled from 'styled-components/native';
-import { Ionicons } from '@expo/vector-icons';
-import { Text } from 'react-native';
+import React from "react";
+import styled from "styled-components/native";
+import { Ionicons } from "@expo/vector-icons";
+import { Text } from "react-native";
 
 export default function ContainerSearch() {
   return (
     <>
-        <ContainerSearchStyled>
+      <ContainerSearchStyled>
         {/* <IoIosSearch /> */}
-        <Ionicons
-          name="search"
-          size={20}
-          color={"rgb(99, 102, 241)"}
-        />
-          <ContainerText>
-            <ContainerSubTitle>
-              {/* <Title>Repas</Title>
+        <Ionicons name="search" size={20} color={"rgb(99, 102, 241)"} />
+        <ContainerText>
+          <ContainerSubTitle>
+            {/* <Title>Repas</Title>
               <MedianCircle>•</MedianCircle> */}
-              <Title>Autour de moi</Title>
-            </ContainerSubTitle>
-            
-            {/* <TextTime>À tout moment</TextTime> */}
-            <TextTime>Repas 🍛</TextTime>
-          </ContainerText>
+            <Title>Autour de moi</Title>
+          </ContainerSubTitle>
 
-          {/* icon update field*/}
-          <Ionicons
-            name="create-outline"
-            size={20}
-            color={"#869098"}
-          />
+          {/* <TextTime>À tout moment</TextTime> */}
+          <TextTime>Repas 🍛</TextTime>
+        </ContainerText>
 
-        </ContainerSearchStyled>
-      </>
-  )
+        {/* icon update field*/}
+        <Ionicons name="create-outline" size={20} color={"#869098"} />
+      </ContainerSearchStyled>
+    </>
+  );
 }
-
 
 const ContainerSearchStyled = styled.View`
   font-size: 1rem;
@@ -69,7 +59,6 @@ const ContainerText = styled.View`
 const Title = styled.Text`
   font-weight: 500;
   font-size: 16px;
-
 `;
 
 const MedianCircle = styled.Text`

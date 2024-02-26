@@ -8,7 +8,6 @@ import ContainerSearch from "./widgets/ContainerSearch";
 import MapComponent from "./widgets/MapComponent";
 import { Entypo, Ionicons } from "@expo/vector-icons";
 import { Alert, Platform, ToastAndroid } from "react-native";
-import { platsData } from "./restaurantData";
 
 const MapScreen = () => {
   const [isList, setIsList] = useState(false);
@@ -122,7 +121,7 @@ const MapScreen = () => {
       </MenuMapContainer>
 
       {!isList && location && (
-        <MapComponent location={location} platsData={platsData} />
+        <MapComponent location={location} />
       )}
     </MapScreenContainer>
   );

@@ -7,8 +7,9 @@ import { mapStyle } from "../../../theme/map.style";
 import MyPositionAnim from "../../home/inactif_map/MyPositionAnim";
 import { mainTheme } from "../../../theme/main.theme";
 import Restaurent from "../../../assets/icons-map/restaurent.png";
+import { platsData } from "../../../data/fakeData";
 
-const MapComponent = ({ location, platsData }: any) => {
+const MapComponent = ({ location }: any) => {
   return (
     <MapScreenContainer>
       <MapView
@@ -16,8 +17,10 @@ const MapComponent = ({ location, platsData }: any) => {
         customMapStyle={mapStyle as any}
         style={styles.map}
         region={{
-          latitude: location.coords.latitude,
-          longitude: location.coords.longitude,
+          // latitude: location.coords.latitude,
+          // longitude: location.coords.longitude,
+          latitude: 48.668,
+          longitude: 6.1613506,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
@@ -25,8 +28,10 @@ const MapComponent = ({ location, platsData }: any) => {
       >
         <Marker
           coordinate={{
-            latitude: location.coords.latitude,
-            longitude: location.coords.longitude,
+            // latitude: location.coords.latitude,
+            // longitude: location.coords.longitude,
+            latitude: 48.668,
+            longitude: 6.1613506,
           }}
         >
           <MyPositionAnim
@@ -60,6 +65,7 @@ const MapComponent = ({ location, platsData }: any) => {
                 style={{ width: 30, height: 30 }}
               />
             )}
+            
           </Marker>
         ))}
       </MapView>

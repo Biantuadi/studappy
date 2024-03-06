@@ -7,7 +7,7 @@ import { mapStyle } from "../../../theme/map.style";
 import MyPositionAnim from "../../home/inactif_map/MyPositionAnim";
 import { mainTheme } from "../../../theme/main.theme";
 import Restaurent from "../../../assets/icons-map/restaurent.png";
-import { platsData } from "../../../data/fakeData";
+import { repasData } from "../../../data/fakeData";
 
 // import Courses from "../../../assets/icons-map/courses.png";
 // import Cinemas from "../../../assets/icons-map/pop-corn-cinema.webp";
@@ -47,8 +47,7 @@ const MapComponent = ({ location }: any) => {
         </Marker>
 
         {/* Markers for places */}
-        {/* Render a Marker for each place */}
-        {platsData.map((place: any) => (
+        {repasData.map((place: any) => (
           <Marker
             key={place.id}
             coordinate={place.coordinates}

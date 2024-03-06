@@ -1,4 +1,4 @@
-export const platsData = [
+export const repasData = [
   {
     id: 1,
     name: "Tasty Burger Joint",
@@ -61,8 +61,178 @@ export const platsData = [
   },
 ];
 
-const coursesData = []
+export const coursesData = [
+  {
+    id: 1,
+    name: "Lidl",
+    type: "Supermarket",
+    distance: 0.3,
+    coordinates: {
+      latitude: 48.6921,
+      longitude: 6.144, // Coordinates near Nancy, France
+    },
+  },
+  {
+    id: 2,
+    name: "Auchan",
+    type: "Supermarket",
+    distance: 0.5,
+    coordinates: {
+      latitude: 48.69,
+      longitude: 6.215, // Coordinates near Nancy, France
+    },
+  },
+  {
+    id: 3,
+    name: "Carrefour",
+    type: "Supermarket",
+    distance: 0.6,
+    coordinates: {
+      latitude: 48.6905,
+      longitude: 6.186, // Coordinates near Nancy, France
+    },
+  }
+]
 
-const santeEtBienEtreData = []
+export const cinemasData = [
+  {
+    id: 1,
+    name: "Cinéma Kinepolis",
+    distance: 0.3,
+    coordinates: {
+      latitude: 48.6921,
+      longitude: 6.144, // Coordinates near Nancy, France
+    },
+  },
+  {
+    id: 2,
+    name: "Cinéma UGC",
+    distance: 0.5,
+    coordinates: {
+      latitude: 48.69,
+      longitude: 6.215, // Coordinates near Nancy, France
+    },
+  },
+  {
+    id: 3,
+    name: "Cinéma Gaumont",
+    distance: 0.6,
+    coordinates: {
+      latitude: 48.6905,
+      longitude: 6.186, // Coordinates near Nancy, France
+    },
+  }
+]
 
-const servicesData = []
+
+export const gymsData = [
+  {
+    id: 1,
+    name: "Basic Fit",
+    distance: 0.3,
+    coordinates: {
+      latitude: 48.6921,
+      longitude: 6.144, // Coordinates near Nancy, France
+    },
+  },
+  {
+    id: 2,
+    name: "Keep Cool",
+    distance: 0.5,
+    coordinates: {
+      latitude: 48.69,
+      longitude: 6.215, // Coordinates near Nancy, France
+    },
+  },
+  {
+    id: 3,
+    name: "Fitlane",
+    distance: 0.6,
+    coordinates: {
+      latitude: 48.6905,
+      longitude: 6.186, // Coordinates near Nancy, France
+    },
+  }
+]
+
+export const barbersData = [
+  {
+    id: 1,
+    name: "Barber Shop",
+    distance: 0.3,
+    coordinates: {
+      latitude: 48.6921,
+      longitude: 6.144, // Coordinates near Nancy, France
+    },
+  },
+  {
+    id: 2,
+    name: "Hair Salon",
+    distance: 0.5,
+    coordinates: {
+      latitude: 48.69,
+      longitude: 6.215, // Coordinates near Nancy, France
+    },
+  },
+  {
+    id: 3,
+    name: "Hairdresser",
+    distance: 0.6,
+    coordinates: {
+      latitude: 48.6905,
+      longitude: 6.186, // Coordinates near Nancy, France
+    },
+  }
+]
+
+export const logementsData = [
+  {
+    id: 1,
+    price: 100,
+    type: "Appartement",
+    distance: 0.3,
+    coordinates: {
+      latitude: 48.6921,
+      longitude: 6.144, // Coordinates near Nancy, France
+    },
+    imageBg: "https://www.ouestfrance-immo.com/medias/2019/12/17/5df8e3e3d4c6e_1576598595.jpg",
+    images: [
+      "https://www.ouestfrance-immo.com/medias/2019/12/17/5df8e3e3d4c6e_1576598595.jpg",
+      "https://www.ouestfrance-immo.com/medias/2019/12/17/5df8e3e3d4c6e_1576598595.jpg",
+      "https://www.ouestfrance-immo.com/medias/2019/12/17/5df8e3e3d4c6e_1576598595.jpg"
+    ]
+  },
+  {
+    id: 2,
+    price: 200,
+    type: "Maison",
+    distance: 0.5,
+    coordinates: {
+      latitude: 48.69,
+      longitude: 6.215, // Coordinates near Nancy, France
+    },
+    imageBg: "https://www.ouestfrance-immo.com/medias/2019/12/17/5df8e3e3d4c6e_1576598595.jpg",
+    images: [
+      "https://www.ouestfrance-immo.com/medias/2019/12/17/5df8e3e3d4c6e_1576598595.jpg",
+      "https://www.ouestfrance-immo.com/medias/2019/12/17/5df8e3e3d4c6e_1576598595.jpg",
+      "https://www.ouestfrance-immo.com/medias/2019/12/17/5df8e3e3d4c6e_1576598595.jpg"
+    ]
+  },
+  {
+    id: 3,
+    price: 300,
+    type: "Studio",
+    distance: 0.6,
+    coordinates: {
+      latitude: 48.6905,
+      longitude: 6.186, // Coordinates near Nancy, France
+    },
+    imageBg: "https://www.ouestfrance-immo.com/medias/2019/12/17/5df8e3e3d4c6e_1576598595.jpg",
+    images: [
+      "https://www.ouestfrance-immo.com/medias/2019/12/17/5df8e3e3d4c6e_1576598595.jpg",
+      "https://www.ouestfrance-immo.com/medias/2019/12/17/5df8e3e3d4c6e_1576598595.jpg",
+      "https://www.ouestfrance-immo.com/medias/2019/12/17/5df8e3e3d4c6e_1576598595.jpg"
+    ]
+  }
+
+]

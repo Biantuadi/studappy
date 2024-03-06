@@ -60,3 +60,9 @@ export const platsData = [
     type: "fastfood",
   },
 ];
+
+const coursesData = []
+
+const santeEtBienEtreData = []
+
+const servicesData = []

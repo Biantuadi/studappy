@@ -4,7 +4,7 @@
     "slug": "studappy",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icon.jpeg",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -29,14 +29,26 @@
           "backgroundColor": "#1d1c1b",
           "style": "light"
         }
-      }
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyBVS9ax-eNQVCFeKy_7jDsy8uWfEgoG7T0"
+       }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.jpeg",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.kevin0033.studappy"
+      "package": "com.kevin0033.studappy",
+      "splash": {
+        "image": "./assets/splash.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#1d1c1b",
+        "statusBar": {
+          "backgroundColor": "#1d1c1b",
+          "style": "light"
+        }
+      } 
     },
     "extra": {
       "eas": {

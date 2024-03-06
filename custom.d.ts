@@ -23,6 +23,11 @@ declare module "*.svg" {
     return value;
 }
 
+declare module "*.webp" {
+    const value: any;
+    return value;
+}
+
 declare module "*.json" {
     const value: any;
     export default value;

@@ -1,7 +1,7 @@
 // MapComponent.js
 import React from "react";
-import { View, StyleSheet, Image } from "react-native";
-import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
+import { StyleSheet, Image } from "react-native";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import styled from "styled-components/native";
 import { mapStyle } from "../../../theme/map.style";
 import MyPositionAnim from "../../home/inactif_map/MyPositionAnim";
@@ -9,11 +9,15 @@ import { mainTheme } from "../../../theme/main.theme";
 import Restaurent from "../../../assets/icons-map/restaurent.png";
 import { platsData } from "../../../data/fakeData";
 
+// import Courses from "../../../assets/icons-map/courses.png";
+// import Cinemas from "../../../assets/icons-map/pop-corn-cinema.webp";
+
 const MapComponent = ({ location }: any) => {
   return (
     <MapScreenContainer>
       <MapView
-        provider={PROVIDER_DEFAULT}
+        provider={ PROVIDER_GOOGLE }
+
         customMapStyle={mapStyle as any}
         style={styles.map}
         region={{

@@ -40,10 +40,11 @@ export default function HomeScreen() {
               onPress={() => navigation.navigate("BonsPlans")}
             />
             {/* ou abonnements */}
-            <Category text="WebOffers" iconName="card" /> 
+            <Category text="WebOffers" iconName="globe" /> 
           </GroupeCategories>
           <GroupeCategories>
             <Category text="Aides d'État" iconName="cash" />
+            {/* e-shop ou tech (outil => telephone, ordi, ...) */}
             <Category text="e-Shop" iconName="cart" />
           </GroupeCategories>
         </ContainerCategories>

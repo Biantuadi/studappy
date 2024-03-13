@@ -13,11 +13,14 @@ import { StatusBar } from "expo-status-bar";
 import Apart from "../../assets/icons/apart.png";
 
 export default function BonsPlansScreen() {
-  // come back previous screen
   const navigation = useNavigation();
 
   const handleGoBack = () => {
     navigation.goBack();
+  };
+
+  const handleCategorySelect = (category: string) => {
+    navigation.navigate("Map", { category } as any);
   };
   
   return (
@@ -37,13 +40,13 @@ export default function BonsPlansScreen() {
       </View>
 
       <CardsContainer>
-        <CardCategory title="Repas" image={Food} />
-        <CardCategory title="Courses" image={Courses} />
-        <CardCategory title="Barbershop" image={CoupeClassique} />
-        <CardCategory title="Gym" image={Gym} />
-        <CardCategory title="Cinema" image={Cinema} />
-        <CardCategory title="Magasins" image={Magazin} />
-        <CardCategory title="Logements" image={Apart} />
+        <CardCategory title="Repas" image={Food} onPress={() => handleCategorySelect("Repas")} />
+        <CardCategory title="Courses" image={Courses} onPress={() => handleCategorySelect("Courses")} />
+        <CardCategory title="Coiffures" image={CoupeClassique} onPress={() => handleCategorySelect("Coiffures")} />
+        <CardCategory title="Gym" image={Gym} onPress={() => handleCategorySelect("Gyms")} />
+        <CardCategory title="Cinema" image={Cinema} onPress={() => handleCategorySelect("Cinémas")} />
+        <CardCategory title="Magasins" image={Magazin} onPress={() => handleCategorySelect("Magasins")} />
+        <CardCategory title="Logements" image={Apart} onPress={() => handleCategorySelect("Logements")} />
       </CardsContainer>
       <StatusBar style="auto" backgroundColor={mainTheme.colors.white}  />
     </BonsPlansScreenContainer>

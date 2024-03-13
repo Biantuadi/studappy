@@ -2,7 +2,7 @@
   "name": "studappy",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start --dev-client",
+    "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "git:amend": "git add --all && git commit --amend --no-edit && git push -f",

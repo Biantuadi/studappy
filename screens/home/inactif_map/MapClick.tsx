@@ -3,12 +3,12 @@ import ImgMap from "../../../assets/images/map_1.png";
 import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 import Shape from "../../../assets/images/shape.png";
-import { Image } from "react-native";
 import MyPositionAnim from "./MyPositionAnim";
+import { Platform } from "react-native";
 
 export default function MapClick({onPress}: {onPress?: () => void }) {
   return (
-    <ContainerBgImage onPress={onPress} activeOpacity={1}>
+    <ContainerBgImage onPress={onPress} activeOpacity={1} style={{ marginRight: Platform.OS === "ios" ? 30 : undefined, marginLeft: Platform.OS === "ios" ?  30  : undefined  }}>
       <BgImage source={ImgMap as any} />
       <AllPositionContainer>
         <TouchableOpacity style={{ alignItems: "center", justifyContent: "center" }} onPress={onPress} activeOpacity={.8}>
@@ -42,12 +42,13 @@ const ContainerBgImage = styled.TouchableOpacity`
   position: relative;
   align-self: center;
   margin-top: 30px;
+  
 `;
 
 const BgImage = styled.Image`
   object-fit: contain;
-  width: 360px;
-  height: 181px;
+  flex: .83;
+  aspect-ratio: 1.98;
 `;
 
 const AllPositionContainer = styled.View`
@@ -58,7 +59,7 @@ const AllPositionContainer = styled.View`
   gap: 8px;
   justify-content: center;
   align-items: center;
-`;
+  `;
 
 const PositionCard = styled.View`
   background-color: #1d1f24;

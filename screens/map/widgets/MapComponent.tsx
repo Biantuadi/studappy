@@ -6,23 +6,24 @@ import styled from "styled-components/native";
 import { mapStyle } from "../../../theme/map.style";
 import MyPositionAnim from "../../home/inactif_map/MyPositionAnim";
 import { mainTheme } from "../../../theme/main.theme";
-import Restaurent from "../../../assets/icons-map/restaurent.png";
-import { repasData } from "../../../data/fakeData";
+import RestaurantIcon from "../../../assets/icons-map/restaurent.png";
+import SupermarketIcon from "../../../assets/icons-map/courses.png";
+import CinemaIcon from "../../../assets/icons-map/pop-corn-cinema.webp";
+import GymIcon from "../../../assets/icons-map/gym.webp";
+import BarbershopIcon from "../../../assets/icons-map/barber.png";
+import FastFoodIcon from "../../../assets/icons-map/fastfood.webp";
+import HouseIcon from "../../../assets/icons-map/house.png";
 
-// import Courses from "../../../assets/icons-map/courses.png";
-// import Cinemas from "../../../assets/icons-map/pop-corn-cinema.webp";
 
-const MapComponent = ({ location }: any) => {
+
+const MapComponent = ({ location, data }: any) => {
   return (
     <MapScreenContainer>
       <MapView
-        provider={ PROVIDER_GOOGLE }
-
+        provider={PROVIDER_GOOGLE}
         customMapStyle={mapStyle as any}
         style={styles.map}
         region={{
-          // latitude: location.coords.latitude,
-          // longitude: location.coords.longitude,
           latitude: 48.668,
           longitude: 6.1613506,
           latitudeDelta: 0.0922,
@@ -32,8 +33,6 @@ const MapComponent = ({ location }: any) => {
       >
         <Marker
           coordinate={{
-            // latitude: location.coords.latitude,
-            // longitude: location.coords.longitude,
             latitude: 48.668,
             longitude: 6.1613506,
           }}
@@ -47,33 +46,44 @@ const MapComponent = ({ location }: any) => {
         </Marker>
 
         {/* Markers for places */}
-        {repasData.map((place: any) => (
+        {data.map((place: any) => (
           <Marker
             key={place.id}
             coordinate={place.coordinates}
             title={place.name}
-            description={`${place.cuisine} | Rating: ${place.rating}`}
+            // description={place.cuisine ? `${place.cuisine} | Rating: ${place.rating}` : null}
           >
-            {/* Conditionally render different icons based on the type of place */}
-            {place.type === "restaurant" ? (
-              <Image
-                source={Restaurent as any}
-                style={{ width: 30, height: 30, objectFit: "contain" }}
-              />
-            ) : (
-              <Image
-                source={{
-                  uri: "https://cdn3d.iconscout.com/3d/premium/thumb/french-fries-4693314-3895628.png?f=webp",
-                }}
-                style={{ width: 30, height: 30 }}
-              />
-            )}
-            
+            {renderMarkerIcon(place.type)}
           </Marker>
         ))}
+
       </MapView>
     </MapScreenContainer>
   );
+};
+
+
+const renderMarkerIcon = (type: string) => {
+  const typeLowerCase = type && type.toLowerCase();
+  switch (typeLowerCase) {
+    case "restaurant":
+      return <Image source={RestaurantIcon as any} style={styles.markerIcon} />;
+    case "supermarket":
+      return <Image source={SupermarketIcon as any} style={styles.markerIcon} />;
+    case "cinema":
+      return <Image source={CinemaIcon as any} style={styles.markerIcon} />;
+    case "gym":
+      return <Image source={GymIcon as any} style={styles.markerIcon} />;
+    case "barber":
+      return <Image source={BarbershopIcon as any} style={styles.markerIcon} />;
+    case "appartement":
+      return <Image source={HouseIcon as any} style={styles.markerIcon} />;
+    case "fastfood":
+      return <Image source={FastFoodIcon as any} style={styles.markerIcon} />;
+    
+    default:
+      return null;
+  }
 };
 
 const MapScreenContainer = styled.View`
@@ -84,8 +94,11 @@ const MapScreenContainer = styled.View`
 const styles = StyleSheet.create({
   map: {
     flex: 1,
-    alignSelf: "stretch",
-    height: "100%",
+  },
+  markerIcon: {
+    width: 30,
+    height: 30,
+    resizeMode: "contain",
   },
 });
 

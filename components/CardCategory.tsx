@@ -29,7 +29,7 @@ const CardBonPlan = styled.TouchableOpacity`
 `;
 
 const TextCard = styled.Text`
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
 `;

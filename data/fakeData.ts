@@ -55,7 +55,7 @@ export const repasData = [
     distance: 1.1,
     coordinates: {
       latitude: 48.6905,
-      longitude: 6.186, // Coordinates near Nancy, France
+      longitude: 6.16, // Coordinates near Nancy, France
     },
     type: "fastfood",
   },
@@ -99,6 +99,7 @@ export const cinemasData = [
     id: 1,
     name: "Cinéma Kinepolis",
     distance: 0.3,
+    type: "Cinema",
     coordinates: {
       latitude: 48.6921,
       longitude: 6.144, // Coordinates near Nancy, France
@@ -107,6 +108,7 @@ export const cinemasData = [
   {
     id: 2,
     name: "Cinéma UGC",
+    type: "Cinema",
     distance: 0.5,
     coordinates: {
       latitude: 48.69,
@@ -116,6 +118,7 @@ export const cinemasData = [
   {
     id: 3,
     name: "Cinéma Gaumont",
+    type: "Cinema",
     distance: 0.6,
     coordinates: {
       latitude: 48.6905,
@@ -130,6 +133,7 @@ export const gymsData = [
     id: 1,
     name: "Basic Fit",
     distance: 0.3,
+    type: "Gym",
     coordinates: {
       latitude: 48.6921,
       longitude: 6.144, // Coordinates near Nancy, France
@@ -138,6 +142,7 @@ export const gymsData = [
   {
     id: 2,
     name: "Keep Cool",
+    type: "Gym",
     distance: 0.5,
     coordinates: {
       latitude: 48.69,
@@ -147,6 +152,7 @@ export const gymsData = [
   {
     id: 3,
     name: "Fitlane",
+    type: "Gym",
     distance: 0.6,
     coordinates: {
       latitude: 48.6905,
@@ -159,6 +165,7 @@ export const barbersData = [
   {
     id: 1,
     name: "Barber Shop",
+    type: "barber",
     distance: 0.3,
     coordinates: {
       latitude: 48.6921,
@@ -168,6 +175,7 @@ export const barbersData = [
   {
     id: 2,
     name: "Hair Salon",
+    type: "barber",
     distance: 0.5,
     coordinates: {
       latitude: 48.69,
@@ -177,6 +185,7 @@ export const barbersData = [
   {
     id: 3,
     name: "Hairdresser",
+    type: "Barber",
     distance: 0.6,
     coordinates: {
       latitude: 48.6905,
@@ -205,7 +214,7 @@ export const logementsData = [
   {
     id: 2,
     price: 200,
-    type: "Maison",
+    type: "Appartement",
     distance: 0.5,
     coordinates: {
       latitude: 48.69,
@@ -221,7 +230,7 @@ export const logementsData = [
   {
     id: 3,
     price: 300,
-    type: "Studio",
+    type: "Appartement",
     distance: 0.6,
     coordinates: {
       latitude: 48.6905,
@@ -235,4 +244,39 @@ export const logementsData = [
     ]
   }
 
+]
+
+// magasins de vetements
+
+export const vetementsData = [
+  {
+    id: 1,
+    name: "Zara",
+    type: "Vetements",
+    distance: 0.3,
+    coordinates: {
+      latitude: 48.6921,
+      longitude: 6.144, // Coordinates near Nancy, France
+    },
+  },
+  {
+    id: 2,
+    name: "H&M",
+    type: "Vetements",
+    distance: 0.5,
+    coordinates: {
+      latitude: 48.69,
+      longitude: 6.215, // Coordinates near Nancy, France
+    },
+  },
+  {
+    id: 3,
+    name: "C&A",
+    type: "Vetements",
+    distance: 0.6,
+    coordinates: {
+      latitude: 48.6905,
+      longitude: 6.186, // Coordinates near Nancy, France
+    },
+  }
 ]

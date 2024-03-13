@@ -1,70 +1,89 @@
 import React, { useEffect, useState } from "react";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import * as Location from "expo-location";
+import { ActivityIndicator } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import styled from "styled-components/native";
 import { mainTheme } from "../../theme/main.theme";
 import ContainerSearch from "./widgets/ContainerSearch";
 import MapComponent from "./widgets/MapComponent";
 import { Entypo, Ionicons } from "@expo/vector-icons";
-import { Alert, Platform, ToastAndroid } from "react-native";
+import {
+  repasData,
+  coursesData,
+  cinemasData,
+  gymsData,
+  barbersData,
+  logementsData,
+  vetementsData,
+} from "../../data/fakeData";
 
 const MapScreen = () => {
   const [isList, setIsList] = useState(false);
-  const [location, setLocation] = useState<Location.LocationObject | null>(
-    null
-  );
+  const [location, setLocation] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigation = useNavigation();
+  const route = useRoute();
+
+  // Définir "Repas" comme catégorie par défaut si aucune catégorie n'est passée
+  const { category = "Repas" }: any= route.params || {};
 
   useEffect(() => {
+    setLoading(true);
     const getLocationPermission = async () => {
       try {
         const { status } = await Location.requestForegroundPermissionsAsync();
         if (status !== "granted") {
-          navigation.goBack();
-          Platform.OS === "android"
-            ? ToastAndroid.show(
-                "Permission to access location was denied",
-                ToastAndroid.LONG
-              )
-            : Alert.alert("Permission to access location was denied");
-        } else {
-          const currentLocation = await Location.getCurrentPositionAsync({});
-          setLocation(currentLocation);
+          navigation.navigate("Accueil" as never);
+          return;
         }
+        const currentLocation :any= await Location.getCurrentPositionAsync({});
+        setLocation(currentLocation);
       } catch (error) {
         console.error("Error requesting location permission:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     getLocationPermission();
-  }, [navigation]);
+  }, []); // si on rajoute [navigation] ça va permettre de recharger la page à chaque fois qu'on change de page
 
-  const onPressReturn = () => {
-    navigation.goBack();
+  const getDataForCategory = (category:any) => {
+    switch (category) {
+      case "Repas":
+        return repasData;
+      case "Courses":
+        return coursesData;
+      case "Cinémas":
+        return cinemasData;
+      case "Gyms":
+        return gymsData;
+      case "Coiffures":
+        return barbersData;
+      case "Logements":
+        return logementsData;
+      case "Magasins":
+        return vetementsData;
+      default:
+        return [];
+    }
   };
 
   return (
     <MapScreenContainer>
       <StatusBar style="dark" backgroundColor={mainTheme.colors.white} />
-
       <MenuMapContainer
         style={
-          isList
-            ? { backgroundColor: "#fff" }
-            : { backgroundColor: "transparent" }
+          isList ? { backgroundColor: "#fff" } : { backgroundColor: "transparent" }
         }
       >
         <ContainerReturnAndSearch>
-          <ContainerReturn activeOpacity={0.8} onPress={onPressReturn}>
-            <Ionicons
-              name="arrow-back"
-              size={24}
-              color={mainTheme.colors.colorTest}
-            />
+          <ContainerReturn activeOpacity={0.8} onPress={() => navigation.navigate("Accueil" as never)}>
+            <Ionicons name="arrow-back" size={24} color={mainTheme.colors.colorTest} />
           </ContainerReturn>
 
-          <ContainerSearch />
+          <ContainerSearch category={category} />
         </ContainerReturnAndSearch>
 
         <ContainerCategories>
@@ -73,6 +92,7 @@ const MapScreen = () => {
               width: 113,
             }}
             activeOpacity={0.8}
+            onPress={() => navigation.navigate("BonsPlans" as never) }
           >
             <Ionicons
               name="pricetags-outline"
@@ -82,46 +102,36 @@ const MapScreen = () => {
             <CategoryText>Prestations</CategoryText>
           </ContainerCategory>
 
-          <ContainerCategory
-            activeOpacity={0.8}
-            onPress={() => {
-              setIsList(!isList);
-            }}
-          >
+          <ContainerCategory activeOpacity={0.8} onPress={() => setIsList(!isList)}>
             {isList ? (
               <>
-                <Ionicons
-                  name="map-outline"
-                  size={16}
-                  color={mainTheme.colors.colorTest}
-                />
+                <Ionicons name="map-outline" size={16} color={mainTheme.colors.colorTest} />
                 <CategoryText>Carte</CategoryText>
               </>
             ) : (
               <>
-                <Ionicons
-                  name="list-outline"
-                  size={16}
-                  color={mainTheme.colors.colorTest}
-                />
+                <Ionicons name="list-outline" size={16} color={mainTheme.colors.colorTest} />
                 <CategoryText>Liste</CategoryText>
               </>
             )}
           </ContainerCategory>
 
           <ContainerCategory activeOpacity={0.8}>
-            <Entypo
-              name="flow-parallel"
-              size={16}
-              color={mainTheme.colors.colorTest}
-            />
+            <Entypo name="flow-parallel" size={16} color={mainTheme.colors.colorTest} />
             <CategoryText>Filtres</CategoryText>
           </ContainerCategory>
         </ContainerCategories>
       </MenuMapContainer>
 
-      {!isList && location && (
-        <MapComponent location={location} />
+      {loading ? (
+        <LoaderContainer>
+          <ActivityIndicator size="large" color={mainTheme.colors.primary} />
+          <TextLoader>La carte se charge, veuillez patienter...</TextLoader>
+        </LoaderContainer>
+      ) : (
+        !isList && location && (
+          <MapComponent location={location} data={getDataForCategory(category)} category={category} />
+        )
       )}
     </MapScreenContainer>
   );
@@ -178,6 +188,19 @@ const ContainerReturn = styled.TouchableOpacity`
   border-radius: 30px;
   ${mainTheme.platformShadow(0.6)}
   background-color: ${mainTheme.colors.white};
+`;
+
+const LoaderContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
+const TextLoader = styled.Text`
+  margin-top: 20px;
+  font-size: 14px;
+  color: ${mainTheme.colors.colorTest};
+  font-weight: 500;
 `;
 
 export default MapScreen;

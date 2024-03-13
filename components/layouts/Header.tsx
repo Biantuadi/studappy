@@ -1,16 +1,20 @@
 import CircleAvatar from "../CircleAvatar";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styled from "styled-components/native";
-
+import Avatar from "../../assets/profile.jpg";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Header() {
+  const navigation = useNavigation();
+
+  const navigateToProfile = () => navigation.navigate('Profile' as never);
   return (
     <HeaderContainer>
-      <ProfilInfoCOntainer>
-        <CircleAvatar image={{ uri: "https://picsum.photos/200" }} size={40} />
+      <ProfilInfoCOntainer activeOpacity={0.7} onPress={navigateToProfile}>
+        <CircleAvatar image={Avatar as any} size={40} />
         <ContainerTexts>
           <TitleText>Welcome back!</TitleText>
-          <Name>John Doe</Name>
+          <Name>Kevin Biant.</Name>
         </ContainerTexts>
       </ProfilInfoCOntainer>
 
@@ -27,7 +31,7 @@ const HeaderContainer = styled.View`
   align-items: center;
 `;
 
-const ProfilInfoCOntainer = styled.View`
+const ProfilInfoCOntainer = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   border-radius: 18px;

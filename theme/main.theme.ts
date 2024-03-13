@@ -17,6 +17,7 @@ export const mainTheme = {
 
         // rajouté
         colorTest: 'rgb(99, 102, 241)',
+        // colorTest: '#000',
     },
     fonts: {
         primary: 'Roboto, sans-serif',
@@ -25,6 +26,10 @@ export const mainTheme = {
     platformShadow: (elevation:number)=> (Platform.OS === "android") ? {
     elevation: elevation.toString(),
     backgroundColor: '#fff',
- } : { shadowColor: '#000', shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.14, shadowRadius: 10 },
+ } : { 
+    border: '0.3px solid rgb(209, 213, 219)',
+  },
+
+ // ios shadow : { shadowColor: '#000', shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.14, shadowRadius: 10 },
 
 }

@@ -1,14 +1,40 @@
 import React from "react";
 import styled from "styled-components/native";
 import { Ionicons } from "@expo/vector-icons";
-import { Text } from "react-native";
+import { mainTheme } from "../../../theme/main.theme";
 
-export default function ContainerSearch() {
+interface ContainerSearchProps {
+  category: any;
+}
+
+export default function ContainerSearch( { category }: ContainerSearchProps) {
+
+  const renderCategoryTextAndEmoji = (category: any) => {
+    switch (category) {
+      case "Repas":
+        return "Repas 🍛";
+      case "Courses":
+        return "Courses 🛒";
+      case "Cinémas":
+        return "Cinémas 🎬";
+      case "Gyms":
+        return "Gyms 💪";
+      case "Coiffures":
+        return "Barbers 💈";
+      case "Logements":
+        return "Logements 🏠";
+      case "Magasins":
+        return "Vêtements 👕";
+      default:
+        return "Repas 🍛";
+    }
+  }
+  
   return (
     <>
       <ContainerSearchStyled>
         {/* <IoIosSearch /> */}
-        <Ionicons name="search" size={20} color={"rgb(99, 102, 241)"} />
+        <Ionicons name="search" size={20} color={mainTheme.colors.colorTest} />
         <ContainerText>
           <ContainerSubTitle>
             {/* <Title>Repas</Title>
@@ -17,7 +43,9 @@ export default function ContainerSearch() {
           </ContainerSubTitle>
 
           {/* <TextTime>À tout moment</TextTime> */}
-          <TextTime>Repas 🍛</TextTime>
+          <TextTime>
+            {renderCategoryTextAndEmoji(category)}
+          </TextTime>
         </ContainerText>
 
         {/* icon update field*/}

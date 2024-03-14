@@ -17,11 +17,14 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView
-      style={{ flex: 1, backgroundColor: mainTheme.colors.secondary }}
+      style={{ flex: 1, backgroundColor: mainTheme.colors.primary }}
     >
       <HomeContainer
         showsVerticalScrollIndicator={false}
         refreshControl={null as any}
+        alwaysBounceHorizontal={false}
+        alwaysBounceVertical={false}
+        bounces={false}
       >
         <SectionHeader>
           <Header />
@@ -40,45 +43,32 @@ export default function HomeScreen() {
               onPress={() => navigation.navigate("BonsPlans")}
             />
             {/* ou abonnements */}
-            <Category text="WebOffers" iconName="globe" /> 
+            <Category text="WebOffers" iconName="globe" />
           </GroupeCategories>
           <GroupeCategories>
             <Category text="Aides d'État" iconName="cash" />
             {/* e-shop ou tech (outil => telephone, ordi, ...) */}
-            <Category text="e-Shop" iconName="cart" />
+            <Category text="e-Shop" iconName="cart" onPress={() => navigation.navigate("Eshop")}/>
           </GroupeCategories>
         </ContainerCategories>
 
         {/* sugesstion sectio */}
         <Sugestions />
-
-
       </HomeContainer>
-        <PostionBgTop />
-        <StatusBar style="light" backgroundColor={mainTheme.colors.primary} />
+      <StatusBar style="light" backgroundColor={mainTheme.colors.primary} />
     </SafeAreaView>
   );
 }
 
 const HomeContainer = styled.ScrollView`
   flex: 1;
-  /* background-color: ${mainTheme.colors.secondary}; */
+  background-color: ${mainTheme.colors.secondary};
 `;
 
 const SectionHeader = styled.View`
-  /* background-color: ${mainTheme.colors.primary}; */
+  background-color: ${mainTheme.colors.primary};
   padding: 20px 15px 0 15px;
   height: 320px;
-`;
-
-const PostionBgTop = styled.View`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 320px;
-  background-color: ${mainTheme.colors.primary};
-  z-index: -1;
 `;
 
 const AcrrocheTextContainer = styled.View`

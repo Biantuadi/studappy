@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import * as Location from "expo-location";
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator, Platform } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import styled from "styled-components/native";
 import { mainTheme } from "../../theme/main.theme";
@@ -26,7 +26,7 @@ const MapScreen = () => {
   const route = useRoute();
 
   // Définir "Repas" comme catégorie par défaut si aucune catégorie n'est passée
-  const { category = "Repas" }: any= route.params || {};
+  const { category = "Repas" }: any = route.params || {};
 
   useEffect(() => {
     setLoading(true);
@@ -37,7 +37,7 @@ const MapScreen = () => {
           navigation.navigate("Accueil" as never);
           return;
         }
-        const currentLocation :any= await Location.getCurrentPositionAsync({});
+        const currentLocation: any = await Location.getCurrentPositionAsync({});
         setLocation(currentLocation);
       } catch (error) {
         console.error("Error requesting location permission:", error);
@@ -49,7 +49,7 @@ const MapScreen = () => {
     getLocationPermission();
   }, []); // si on rajoute [navigation] ça va permettre de recharger la page à chaque fois qu'on change de page
 
-  const getDataForCategory = (category:any) => {
+  const getDataForCategory = (category: any) => {
     switch (category) {
       case "Repas":
         return repasData;
@@ -73,14 +73,23 @@ const MapScreen = () => {
   return (
     <MapScreenContainer>
       <StatusBar style="dark" backgroundColor={mainTheme.colors.white} />
-      <MenuMapContainer
-        style={
-          isList ? { backgroundColor: "#fff" } : { backgroundColor: "transparent" }
-        }
-      >
-        <ContainerReturnAndSearch>
-          <ContainerReturn activeOpacity={0.8} onPress={() => navigation.navigate("Accueil" as never)}>
-            <Ionicons name="arrow-back" size={24} color={mainTheme.colors.colorTest} />
+      <MenuMapContainer style={
+        isList && { backgroundColor: "#fff" }
+
+        
+        }>
+        <ContainerReturnAndSearch
+          style={Platform.OS === "ios" && { marginTop: 15 }}
+        >
+          <ContainerReturn
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate("Accueil" as never)}
+          >
+            <Ionicons
+              name="arrow-back"
+              size={24}
+              color={mainTheme.colors.colorTest}
+            />
           </ContainerReturn>
 
           <ContainerSearch category={category} />
@@ -89,10 +98,10 @@ const MapScreen = () => {
         <ContainerCategories>
           <ContainerCategory
             style={{
-              width: 113,
+              width: "35%",
             }}
             activeOpacity={0.8}
-            onPress={() => navigation.navigate("BonsPlans" as never) }
+            onPress={() => navigation.navigate("BonsPlans" as never)}
           >
             <Ionicons
               name="pricetags-outline"
@@ -102,22 +111,37 @@ const MapScreen = () => {
             <CategoryText>Prestations</CategoryText>
           </ContainerCategory>
 
-          <ContainerCategory activeOpacity={0.8} onPress={() => setIsList(!isList)}>
+          <ContainerCategory
+            activeOpacity={0.8}
+            onPress={() => setIsList(!isList)}
+          >
             {isList ? (
               <>
-                <Ionicons name="map-outline" size={16} color={mainTheme.colors.colorTest} />
+                <Ionicons
+                  name="map-outline"
+                  size={16}
+                  color={mainTheme.colors.colorTest}
+                />
                 <CategoryText>Carte</CategoryText>
               </>
             ) : (
               <>
-                <Ionicons name="list-outline" size={16} color={mainTheme.colors.colorTest} />
+                <Ionicons
+                  name="list-outline"
+                  size={16}
+                  color={mainTheme.colors.colorTest}
+                />
                 <CategoryText>Liste</CategoryText>
               </>
             )}
           </ContainerCategory>
 
           <ContainerCategory activeOpacity={0.8}>
-            <Entypo name="flow-parallel" size={16} color={mainTheme.colors.colorTest} />
+            <Entypo
+              name="flow-parallel"
+              size={16}
+              color={mainTheme.colors.colorTest}
+            />
             <CategoryText>Filtres</CategoryText>
           </ContainerCategory>
         </ContainerCategories>
@@ -129,8 +153,13 @@ const MapScreen = () => {
           <TextLoader>La carte se charge, veuillez patienter...</TextLoader>
         </LoaderContainer>
       ) : (
-        !isList && location && (
-          <MapComponent location={location} data={getDataForCategory(category)} category={category} />
+        !isList &&
+        location && (
+          <MapComponent
+            location={location}
+            data={getDataForCategory(category)}
+            category={category}
+          />
         )
       )}
     </MapScreenContainer>

@@ -6,19 +6,23 @@ import Shape from "../../../assets/images/shape.png";
 import MyPositionAnim from "./MyPositionAnim";
 import { Platform } from "react-native";
 
-export default function MapClick({onPress}: {onPress?: () => void }) {
+export default function MapClick({ onPress }: { onPress?: () => void }) {
   return (
-    <ContainerBgImage onPress={onPress} activeOpacity={1} style={{ marginRight: Platform.OS === "ios" ? 30 : undefined, marginLeft: Platform.OS === "ios" ?  30  : undefined  }}>
+    <ContainerBgImage
+      onPress={onPress}
+      activeOpacity={1}
+    
+    >
       <BgImage source={ImgMap as any} />
       <AllPositionContainer>
-        <TouchableOpacity style={{ alignItems: "center", justifyContent: "center" }} onPress={onPress} activeOpacity={.8}>
+        <TouchableOpacity
+          style={{ alignItems: "center", justifyContent: "center" }}
+          onPress={onPress}
+          activeOpacity={0.8}
+        >
           <PositionCard>
             <ContainerIcon>
-            <Ionicons
-              name="location"
-              size={24}
-              color="#A7ADB7"
-            />
+              <Ionicons name="location" size={24} color="#A7ADB7" />
             </ContainerIcon>
             <PositionContainerText>
               <PositionText style={{ color: "#A7ADB7" }}>
@@ -29,7 +33,6 @@ export default function MapClick({onPress}: {onPress?: () => void }) {
           </PositionCard>
           {/* icon chevron bas solid noir */}
           <ChevronIcon source={Shape as any} />
-          
         </TouchableOpacity>
 
         <MyPositionAnim />
@@ -42,12 +45,11 @@ const ContainerBgImage = styled.TouchableOpacity`
   position: relative;
   align-self: center;
   margin-top: 30px;
-  
 `;
 
 const BgImage = styled.Image`
   object-fit: contain;
-  flex: .83;
+  flex: 0.83;
   aspect-ratio: 1.98;
 `;
 
@@ -59,7 +61,7 @@ const AllPositionContainer = styled.View`
   gap: 8px;
   justify-content: center;
   align-items: center;
-  `;
+`;
 
 const PositionCard = styled.View`
   background-color: #1d1f24;
@@ -92,5 +94,4 @@ const ContainerIcon = styled.View`
 const ChevronIcon = styled.Image`
   transform: scale(0.6);
   margin-top: -2.8px;
-
 `;

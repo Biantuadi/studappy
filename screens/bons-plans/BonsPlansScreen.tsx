@@ -11,44 +11,63 @@ import { useNavigation } from "@react-navigation/native";
 import CardCategory from "../../components/CardCategory";
 import { StatusBar } from "expo-status-bar";
 import Apart from "../../assets/icons/apart.png";
+import { Ionicons } from "@expo/vector-icons";
+import BackButton from "../../components/BackButton";
 
 export default function BonsPlansScreen() {
   const navigation = useNavigation();
 
-  const handleGoBack = () => {
-    navigation.goBack();
+  const handleCategorySelect = (category: string) => {
+    navigation.navigate("Map", { category });
   };
 
-  const handleCategorySelect = (category: string) => {
-    navigation.navigate("Map", { category } as any);
-  };
-  
   return (
     <BonsPlansScreenContainer>
-      <AbsoluteBackButton onPress={handleGoBack}>
-        <Image
-          source={{
-            uri: "https://img.icons8.com/ios-glyphs/90/000000/circled-left-2.png",
-          }}
-          style={{ width: 32, height: 32 }}
-        />
-      </AbsoluteBackButton>
-      
+      <BackButton />
+
       <View>
         <TextAcroche>Choisissez une</TextAcroche>
         <TextAcroche>catégorie</TextAcroche>
       </View>
 
       <CardsContainer>
-        <CardCategory title="Repas" image={Food} onPress={() => handleCategorySelect("Repas")} />
-        <CardCategory title="Courses" image={Courses} onPress={() => handleCategorySelect("Courses")} />
-        <CardCategory title="Coiffures" image={CoupeClassique} onPress={() => handleCategorySelect("Coiffures")} />
-        <CardCategory title="Gym" image={Gym} onPress={() => handleCategorySelect("Gyms")} />
-        <CardCategory title="Cinema" image={Cinema} onPress={() => handleCategorySelect("Cinémas")} />
-        <CardCategory title="Magasins" image={Magazin} onPress={() => handleCategorySelect("Magasins")} />
-        <CardCategory title="Logements" image={Apart} onPress={() => handleCategorySelect("Logements")} />
+        <CardCategory
+          title="Repas"
+          image={Food}
+          onPress={() => handleCategorySelect("Repas")}
+        />
+        <CardCategory
+          title="Courses"
+          image={Courses}
+          onPress={() => handleCategorySelect("Courses")}
+        />
+        <CardCategory
+          title="Coiffures"
+          image={CoupeClassique}
+          onPress={() => handleCategorySelect("Coiffures")}
+        />
+        <CardCategory
+          title="Gym"
+          image={Gym}
+          onPress={() => handleCategorySelect("Gyms")}
+        />
+        <CardCategory
+          title="Cinema"
+          image={Cinema}
+          onPress={() => handleCategorySelect("Cinémas")}
+        />
+        <CardCategory
+          title="Magasins"
+          image={Magazin}
+          onPress={() => handleCategorySelect("Magasins")}
+        />
+        <CardCategory
+          title="Logements"
+          image={Apart}
+          onPress={() => handleCategorySelect("Logements")}
+        />
       </CardsContainer>
-      <StatusBar style="auto" backgroundColor={mainTheme.colors.white}  />
+      <StatusBar style="auto" backgroundColor={mainTheme.colors.white} />
     </BonsPlansScreenContainer>
   );
 }
@@ -74,9 +93,4 @@ const CardsContainer = styled.View`
   margin-top: 20px;
   padding: 0 20px;
   background-color: ${mainTheme.colors.white};
-`;
-
-const AbsoluteBackButton = styled.TouchableOpacity`
-  z-index: 10;
-  padding: 0 0 0 15px;
 `;

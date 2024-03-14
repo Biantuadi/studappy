@@ -1,11 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import styled from "styled-components/native";
 import { mainTheme } from "../../theme/main.theme";
+import BackButton from "../../components/BackButton";
 
 export default function ProfileScreen() {
   return (
     <ContanerProfile>
-      {/* <StatusBar style="auto" backgroundColor={mainTheme.colors.white} /> */}
+      <BackButton />
+      <StatusBar style="auto" backgroundColor={mainTheme.colors.white} />
     </ContanerProfile>
   );
 }

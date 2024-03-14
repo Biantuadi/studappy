@@ -12,6 +12,7 @@ export const mainTheme = {
         light: '#f8f9fa',
         dark: '#212529',
         white: '#fff',
+        lightGray: '#f8f9fa',
         black: '#000',
         gray: '#a4a4a4',
 

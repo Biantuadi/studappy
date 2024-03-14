@@ -4,15 +4,19 @@ import { mainTheme } from "../theme/main.theme";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function BackButton() {
+interface BackButtonProps {
+  styleBackButton?: any;
+}
+
+export default function BackButton( {styleBackButton}: BackButtonProps) {
   const navigation = useNavigation();
 
   const handleGoBack = () => {
     navigation.goBack();
   };
   return (
-    <AbsoluteBackButton onPress={handleGoBack}>
-      <Ionicons name="arrow-back" size={25} color={mainTheme.colors.primary} />
+    <AbsoluteBackButton onPress={handleGoBack} style={styleBackButton}>
+      <Ionicons name="arrow-back" size={24} color={mainTheme.colors.primary} />
     </AbsoluteBackButton>
   );
 }

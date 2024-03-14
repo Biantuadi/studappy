@@ -16,7 +16,7 @@ import {
   barbersData,
   logementsData,
   vetementsData,
-} from "../../data/fakeData";
+} from "../../data/fakeDataMap";
 
 const MapScreen = () => {
   const [isList, setIsList] = useState(false);

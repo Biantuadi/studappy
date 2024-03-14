@@ -160,11 +160,11 @@ const TypeText = styled.Text<{ selected: boolean }>`
 `;
 
 const BannerContainerCarousel = styled.View`
-  width: 100%;
   align-items: center;
   flex-direction: row;
-  margin-top: 50px;
-  margin-bottom: 35px;
+  margin-top: 30px;
+  margin-bottom: 25px;
+  gap: 10px;
 `;
 
 const SectionCompanies = styled.View`
@@ -172,6 +172,7 @@ const SectionCompanies = styled.View`
   gap: 20px;
   margin-top: 40px;
   align-self: flex-end;
+  
 `;
 
 const CompaniesTitle = styled.Text`

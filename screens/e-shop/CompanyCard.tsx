@@ -18,14 +18,14 @@ const CompanyItem: React.FC<CompanyItemProps> = ({
   onPress,
 }) => {
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
+    <TouchableOpacity onPress={onPress} activeOpacity={0.8} >
       <CompanyCard>
         <CompanyImage source={{ uri: imageUri }} />
-        <CompanyTitle>{companyName}</CompanyTitle>
-      </CompanyCard>
       <AbsolutePourcent>
         <TextPourcent>-{pourcent}%</TextPourcent>
       </AbsolutePourcent>
+        <CompanyTitle>{companyName}</CompanyTitle>
+      </CompanyCard>
     </TouchableOpacity>
   );
 };
@@ -36,13 +36,14 @@ const CompanyCard = styled.View`
 `;
 
 const CompanyImage = styled.Image`
-  width: 50px;
-  height: 50px;
+  width: 53px;
+  height: 53px;
   border-radius: 10px;
+  position: relative;
 `;
 
 const CompanyTitle = styled.Text`
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
   margin-top: 5px;
 `;
@@ -51,7 +52,6 @@ const AbsolutePourcent = styled.View`
   position: absolute;
   top: 0;
   right: 0;
-  /* background-color: #df0202; */
   background-color: ${mainTheme.colors.promotionReduction};
   border-radius: 0 10px 0 10px;
   padding: 2px 5px;

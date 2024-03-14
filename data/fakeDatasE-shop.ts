@@ -54,26 +54,26 @@ export const tech = [
     name: "Apple",
     promotionPourcent: getRandomPercentage(),
     image:
-      "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202getRandomPercentage()6030738",
+      "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202106030738",
     
   },
   {
     name: "Samsung",
     promotionPourcent: getRandomPercentage(),
     image:
-      "https://www.samsung.com/etc/designs/smg/global/imgs/logo-square-letter.png",
+      "https://images.samsung.com/is/image/samsung/assets/global/about-us/brand/logo/mo/256_144_4.png?$512_N_PNG$",
   },
   {
-    name: "Huawei",
+    name: "Dell",
     promotionPourcent: getRandomPercentage(),
     image:
-      "https://www.huawei.com/fr/press-events/images/logo.png",
+      "https://static.vecteezy.com/ti/vecteur-libre/p1/21514856-dell-marque-logo-ordinateur-symbole-blanc-conception-etats-unis-portable-vecteur-illustration-avec-bleu-contexte-gratuit-vectoriel.jpg",
   },
   {
-    name: "Xiaomi",
+    name: "Bose",
     promotionPourcent: getRandomPercentage(),
     image:
-      "https://www.xiaomi.com/static/image/logo.png",
+      "https://mumbrella.com.au/pro/wp-content/uploads/sites/2/2019/06/Bose.png",
   },
 ];
 
@@ -82,25 +82,25 @@ export const marketPlace = [
     name: "Amazon",
     promotionPourcent: getRandomPercentage(),
     image:
-      "https://www.amazon.fr/ref=nav_logo",
+      "https://cdn6.aptoide.com/imgs/e/b/e/ebeaf9823143891a101a87b2102b4c11_icon.png",
   },
   {
     name: "Ebay",
     promotionPourcent: getRandomPercentage(),
     image:
-      "https://www.ebay.fr/",
+      "https://www.grapheine.com/wp-content/uploads/2012/09/ebay-logo-01.jpg",
   },
   {
-    name: "AliExpress",
+    name: "AliExp...",
     promotionPourcent: getRandomPercentage(),
     image:
-      "https://www.aliexpress.com/",
+      "https://ae01.alicdn.com/kf/Sbc29f5d774a04521b4bcbae119971747m/Gant-de-gardien-de-but.png",
   },
   {
     name: "Wish",
     promotionPourcent: getRandomPercentage(),
     image:
-      "https://www.wish.com/",
+      "https://www.underconsideration.com/brandnew/archives/wish_logo_detail.png",
   },
 ];
 

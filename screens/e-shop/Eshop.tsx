@@ -69,6 +69,15 @@ export default function EshopScreen() {
           </View>
         </HeaderEshop>
 
+        <ContainerInputSearch>
+            <SearchInput placeholder="Taper" />
+            <SearchIcon
+                source={{
+                uri: "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Magnifying%20Glass%20Tilted%20Left.png",
+                }}
+            />
+        </ContainerInputSearch>
+
         {/* Section des types */}
         <ContainerRowTypes>
           {types.map((type: Type, index: number) => (
@@ -122,7 +131,6 @@ export default function EshopScreen() {
 
 const EshopContainer = styled.ScrollView`
   flex: 1;
-  /* background-color: ${mainTheme.colors.white}; */
   padding: 11px;
   padding-top: 15px;
 `;
@@ -161,18 +169,16 @@ const TypeText = styled.Text<{ selected: boolean }>`
 
 const BannerContainerCarousel = styled.View`
   align-items: center;
-  flex-direction: row;
   margin-top: 30px;
-  margin-bottom: 25px;
-  gap: 10px;
+  margin-bottom: 50px;
 `;
 
 const SectionCompanies = styled.View`
   width: 100%;
   gap: 20px;
-  margin-top: 40px;
+  margin-top: 20px;
+  padding-bottom: 40px;
   align-self: flex-end;
-  
 `;
 
 const CompaniesTitle = styled.Text`
@@ -182,7 +188,31 @@ const CompaniesTitle = styled.Text`
 
 const CompaniesContainer = styled.View`
   flex-direction: row;
-  gap: 30px;
+  gap: 20px;
   margin-top: 20px;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+`;
+
+const ContainerInputSearch = styled.View`
+  width: 97%;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+`;
+
+const SearchInput = styled.TextInput`
+  flex: 1;
+  padding: 10px;
+  border-radius: 7px;
+  border: 0.5px solid rgb(209, 213, 219);
+  font-size: 15px;
+`;
+
+const SearchIcon = styled.Image`
+  width: 30px;
+  height: 30px;
 `;

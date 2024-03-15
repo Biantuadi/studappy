@@ -1,7 +1,5 @@
 import styled from "styled-components/native";
-import { Ionicons } from "@expo/vector-icons";
 import CardSuggestion from "./CardSugestion";
-import { mainTheme } from "../../../theme/main.theme";
 import { Image } from "react-native";
 import Fire from "../../../assets/Fire.png"
 

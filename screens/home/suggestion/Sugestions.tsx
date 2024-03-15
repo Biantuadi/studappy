@@ -2,17 +2,18 @@ import styled from "styled-components/native";
 import { Ionicons } from "@expo/vector-icons";
 import CardSuggestion from "./CardSugestion";
 import { mainTheme } from "../../../theme/main.theme";
+import { Image } from "react-native";
+import Fire from "../../../assets/Fire.png"
 
 export default function Sugestions() {
   return (
     <SugestionsStyled>
       <ContainerTitle>
         <SugestionText>Suggestion</SugestionText>
-        <Ionicons
-          name="flash"
-          size={22}
-          color={mainTheme.colors.black}
-        />
+        <Image
+                  source={Fire as any}
+                  style={{ width: 25, height: 25 }}
+                  />
       </ContainerTitle>
 
     <ContainerCards  showsVerticalScrollIndicator={false}
@@ -32,7 +33,7 @@ export default function Sugestions() {
 
 const SugestionsStyled = styled.View`
   margin-top: 30px;
-  padding: 0 15px;
+  padding: 0 15px 30px 15px;
   flex: 1;
 `;
 

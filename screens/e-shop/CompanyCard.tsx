@@ -9,6 +9,7 @@ interface CompanyItemProps {
   companyName: string;
   onPress?: () => void;
   pourcent: number;
+  style?: any;
 }
 
 const CompanyItem: React.FC<CompanyItemProps> = ({
@@ -16,9 +17,10 @@ const CompanyItem: React.FC<CompanyItemProps> = ({
   companyName,
   pourcent,
   onPress,
+  style,
 }) => {
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.8} >
+    <ButtonTouchableOpacity onPress={onPress} activeOpacity={0.8} style={style}>
       <CompanyCard>
         <CompanyImage source={{ uri: imageUri }} />
       <AbsolutePourcent>
@@ -26,9 +28,13 @@ const CompanyItem: React.FC<CompanyItemProps> = ({
       </AbsolutePourcent>
         <CompanyTitle>{companyName}</CompanyTitle>
       </CompanyCard>
-    </TouchableOpacity>
+    </ButtonTouchableOpacity>
   );
 };
+
+const ButtonTouchableOpacity = styled(TouchableOpacity)`
+ gap: 10px;
+`;
 
 const CompanyCard = styled.View`
   border-radius: 10px;
@@ -36,8 +42,8 @@ const CompanyCard = styled.View`
 `;
 
 const CompanyImage = styled.Image`
-  width: 53px;
-  height: 53px;
+  width: 58px;
+  height: 58px; 
   border-radius: 10px;
   position: relative;
 `;

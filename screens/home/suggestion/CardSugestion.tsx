@@ -8,13 +8,14 @@ type CardSuggestionProps = {
     subtitle: string;
     titleRequis: string;
     price: number;
+    onPress?: () => void;
 
     
 }
 
-export default function CardSuggestion( {image, title, subtitle, titleRequis, price}: CardSuggestionProps) {
+export default function CardSuggestion( {image, title, subtitle, titleRequis, price, onPress}: CardSuggestionProps) {
   return (
-    <CardSuggestionStyled>
+    <CardSuggestionStyled activeOpacity={0.8} onPress={onPress}>
         <CardImage
           source={{
             uri: image,
@@ -41,14 +42,14 @@ export default function CardSuggestion( {image, title, subtitle, titleRequis, pr
 }
 
 
-const CardSuggestionStyled = styled.View`
+const CardSuggestionStyled = styled.TouchableOpacity`
   /* background-color: ${mainTheme.colors.white}; */
   border-radius: 10px;
   margin-top: 20px;
   padding: 10px;
   flex-direction: row;
   align-items: center;
-  border: 1px solid rgb(242, 244, 247);
+  border: 1px solid rgb(238, 240, 243);
 `;
 
 const CardImage = styled.Image`

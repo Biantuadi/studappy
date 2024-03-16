@@ -13,16 +13,20 @@ import BarbershopIcon from "../../../assets/icons-map/emoji_barber.png";
 import FastFoodIcon from "../../../assets/icons-map/emoji_fries.png";
 import HouseIcon from "../../../assets/icons-map/emoji_building2.png";
 
-const newRegion = {
-  latitude: 48.699985797535305,
-  latitudeDelta: 0.15975520010125166,
-  longitude: 6.177392229437828,
-  longitudeDelta: 0.10892383754253387,
-};
 
 const MapComponent = ({ location, data }: any) => {
-  const [mapRegion, setMapRegion] = React.useState(newRegion);
+  const fakeLat = 48.668 + 0.0215;
+  const fakeLong = 6.1613506 ;
 
+  const newRegion = {
+    latitude: fakeLat,
+    longitude: fakeLong,
+    latitudeDelta: 0.15975520010125166,
+    longitudeDelta: 0.10892383754253387,
+  };
+
+  const [mapRegion, setMapRegion] = React.useState(newRegion);
+  
   // const handleRegionChangeComplete = (region: any) => {
   //   console.log("New region:", region);
   //   setMapRegion(region);

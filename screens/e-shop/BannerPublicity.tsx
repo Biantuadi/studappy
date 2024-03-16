@@ -4,7 +4,7 @@ import Swiper from 'react-native-swiper';
 
 const images = [
   "https://images.unidays.world/i/self-serve/customer/DwkD_Bx9tE2_Yq_AKzudsKt6wmOPiLxIsGt2wvqyFeE=/header/251f9a98-fdda-4e2c-99d6-f05e1370a608",
-  "https://spotifmania.com/wp-content/uploads/2023/05/How-to-Get-Spotify-Student-Discount.webp",
+  "https://macstores.vn/tin-tuc/wp-content/uploads/2022/01/20220105_61d5d4ec89931.jpg",
   "https://images.frandroid.com/wp-content/uploads/2023/01/amazon-prime-student-deal.jpg",
 ];
 

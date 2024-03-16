@@ -1,5 +1,4 @@
-// MapComponent.js
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Image } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import styled from "styled-components/native";
@@ -14,22 +13,30 @@ import BarbershopIcon from "../../../assets/icons-map/emoji_barber.png";
 import FastFoodIcon from "../../../assets/icons-map/emoji_fries.png";
 import HouseIcon from "../../../assets/icons-map/emoji_building2.png";
 
-
+const newRegion = {
+  latitude: 48.699985797535305,
+  latitudeDelta: 0.15975520010125166,
+  longitude: 6.177392229437828,
+  longitudeDelta: 0.10892383754253387,
+};
 
 const MapComponent = ({ location, data }: any) => {
+  const [mapRegion, setMapRegion] = React.useState(newRegion);
+
+  // const handleRegionChangeComplete = (region: any) => {
+  //   console.log("New region:", region);
+  //   setMapRegion(region);
+  // };
+
   return (
     <MapScreenContainer>
       <MapView
         provider={PROVIDER_GOOGLE}
         customMapStyle={mapStyle as any}
         style={styles.map}
-        region={{
-          latitude: 48.668,
-          longitude: 6.1613506,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
+        region={mapRegion}
         showsCompass={false}
+        // onRegionChangeComplete={handleRegionChangeComplete}
       >
         <Marker
           coordinate={{
@@ -56,12 +63,10 @@ const MapComponent = ({ location, data }: any) => {
             {renderMarkerIcon(place.type)}
           </Marker>
         ))}
-
       </MapView>
     </MapScreenContainer>
   );
 };
-
 
 const renderMarkerIcon = (type: string) => {
   const typeLowerCase = type && type.toLowerCase();
@@ -69,7 +74,9 @@ const renderMarkerIcon = (type: string) => {
     case "restaurant":
       return <Image source={RestaurantIcon as any} style={styles.markerIcon} />;
     case "supermarket":
-      return <Image source={SupermarketIcon as any} style={styles.markerIcon} />;
+      return (
+        <Image source={SupermarketIcon as any} style={styles.markerIcon} />
+      );
     case "cinema":
       return <Image source={CinemaIcon as any} style={styles.markerIcon} />;
     case "gym":
@@ -80,7 +87,7 @@ const renderMarkerIcon = (type: string) => {
       return <Image source={HouseIcon as any} style={styles.markerIcon} />;
     case "fastfood":
       return <Image source={FastFoodIcon as any} style={styles.markerIcon} />;
-    
+
     default:
       return null;
   }

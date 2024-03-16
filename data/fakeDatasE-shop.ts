@@ -55,6 +55,7 @@ export const tech = [
     promotionPourcent: getRandomPercentage(),
     image:
       "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202106030738",
+      border: true,
     
   },
   {
@@ -88,7 +89,8 @@ export const marketPlace = [
     name: "Ebay",
     promotionPourcent: getRandomPercentage(),
     image:
-      "https://www.grapheine.com/wp-content/uploads/2012/09/ebay-logo-01.jpg",
+      "https://cdn.icon-icons.com/icons2/1178/PNG/512/ebay_82054.png",
+    border: true,
   },
   {
     name: "AliExp.",
@@ -97,10 +99,11 @@ export const marketPlace = [
       "https://ae01.alicdn.com/kf/Sbc29f5d774a04521b4bcbae119971747m/Gant-de-gardien-de-but.png",
   },
   {
-    name: "Wish",
+    name: "Zalando",
     promotionPourcent: getRandomPercentage(),
     image:
-      "https://www.underconsideration.com/brandnew/archives/wish_logo_detail.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4ji0GnndSpiTT_KlAWLEwc_RbeXEjNlE9MPRfoUMJB18hAoZKFeE0db_JBZJpvUYUnXk&usqp=CAU",
+      border: true,
   },
 ];
 

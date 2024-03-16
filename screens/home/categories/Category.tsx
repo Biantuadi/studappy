@@ -1,19 +1,22 @@
 import styled from "styled-components/native";
 import { Ionicons } from '@expo/vector-icons';
 import { mainTheme } from "../../../theme/main.theme";
+import React from "react";
 
 type CategoryProps = {
-  iconName: string;
   text: string;
   onPress?: () => void;
+  icon: React.ReactNode;
 }
 
-export default function Category({iconName, text, onPress} : CategoryProps) {
+export default function Category({icon, text, onPress} : CategoryProps) {
   return (
         <ContainerCategory activeOpacity={.8} onPress={onPress} >
         
             <Details>
-              <Ionicons name={iconName as any} size={22} color="#e1e1e166" />
+              {/* <Ionicons name={iconName as any} size={22} color="#e1e1e166" /> */}
+              {icon}
+
               <CategoryText>{text}</CategoryText>
             </Details>
 

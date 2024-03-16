@@ -10,6 +10,7 @@ interface CompanyItemProps {
   onPress?: () => void;
   pourcent: number;
   style?: any;
+  isBorder?: boolean;
 }
 
 const CompanyItem: React.FC<CompanyItemProps> = ({
@@ -18,11 +19,17 @@ const CompanyItem: React.FC<CompanyItemProps> = ({
   pourcent,
   onPress,
   style,
+  isBorder,
 }) => {
   return (
     <ButtonTouchableOpacity onPress={onPress} activeOpacity={0.8} style={style}>
       <CompanyCard>
-        <CompanyImage source={{ uri: imageUri }} />
+        <CompanyImage 
+        source={{ uri: imageUri }}
+        style={
+          isBorder ? {borderWidth: 1, borderColor: "rgb(242, 244, 247)"} : {borderWidth: 0}
+        }
+         />
       <AbsolutePourcent>
         <TextPourcent>-{pourcent}%</TextPourcent>
       </AbsolutePourcent>

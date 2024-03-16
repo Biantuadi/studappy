@@ -52,6 +52,7 @@ export default function EshopScreen() {
       imageUri={item.image}
       companyName={item.name}
       pourcent={item.promotionPourcent}
+      isBorder={item.border && item.border}
       style={{
         width: itemWidth,
         margin: 18,
@@ -115,8 +116,6 @@ export default function EshopScreen() {
     </SafeAreaView>
   );
 }
-
-// Styled components...
 
 const EshopContainer = styled.View`
   flex: 1;

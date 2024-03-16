@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
 
 const images = [
@@ -10,25 +10,29 @@ const images = [
 
 export default function BannerPublicity() {
   return (
-    <Swiper
-      style={styles.wrapper}
-      showsButtons={false}
-      autoplay
-      autoplayTimeout={4}
-      loop={true}
-      dot={<View style={styles.dot} />}
-      activeDot={<View style={styles.activeDot} />}
-      paginationStyle={styles.pagination}
-    >
-      {images.map((image, index) => (
-        <View key={index} style={styles.slide}>
-          <Image
-            source={{ uri: image }}
-            style={styles.image}
-          />
-        </View>
-      ))}
-    </Swiper>
+    <>
+      <Swiper
+        style={styles.wrapper}
+        showsButtons={false}
+        autoplay
+        autoplayTimeout={4}
+        loop={true}
+        dot={<View style={styles.dot} />}
+        activeDot={<View style={styles.activeDot} />}
+        paginationStyle={styles.pagination}
+      >
+        {images.map((image, index) => (
+          <TouchableOpacity activeOpacity={0.8} key={index} style={styles.slide}>
+            <>
+              <Image
+                source={{ uri: image }}
+                style={styles.image}
+              />
+            </>
+          </TouchableOpacity>
+        ))}
+      </Swiper>
+    </>
   );
 }
 

@@ -7,6 +7,7 @@ import Sugestions from "./suggestion/Sugestions";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { mainTheme } from "../../theme/main.theme";
+import { FontAwesome, Ionicons } from '@expo/vector-icons';
 
 export default function HomeScreen() {
   const navigation: any = useNavigation();
@@ -39,15 +40,21 @@ export default function HomeScreen() {
             {/* onclick navigate to map */}
             <Category
               text="Bons Plans"
-              iconName="pricetags"
+              // iconName="pricetags"
+              icon={<Ionicons name="pricetags" size={22} color="#e1e1e166" />}
               onPress={() => navigation.navigate("BonsPlans")}
             />
             {/* ou abonnements */}
-            <Category text="e-Shop" iconName="globe" onPress={() => navigation.navigate("Eshop")} />
+            <Category text="e-Shop" 
+            onPress={() => navigation.navigate("Eshop")}
+            icon={<FontAwesome name="shopping-bag" size={22} color="#e1e1e166" />}
+             />
           </GroupeCategories>
           <GroupeCategories>
-            <Category text="Aides d'État" iconName="cash" />
-            <Category text="Logements" iconName="home" onPress={() => navigation.navigate("Map", { category: "Logements"})} />
+            <Category text="Aides d'État" 
+            icon={<Ionicons name="cash" size={22} color="#e1e1e166" />}
+             />
+            <Category text="Logements" icon={<FontAwesome name="building" size={22} color="#e1e1e166" />} onPress={() => navigation.navigate("Map", { category: "Logements"})} />
           </GroupeCategories>
         </ContainerCategories>
 

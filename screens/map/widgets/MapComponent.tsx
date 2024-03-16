@@ -6,13 +6,13 @@ import styled from "styled-components/native";
 import { mapStyle } from "../../../theme/map.style";
 import MyPositionAnim from "../../home/inactif_map/MyPositionAnim";
 import { mainTheme } from "../../../theme/main.theme";
-import RestaurantIcon from "../../../assets/icons-map/restaurent.png";
+import RestaurantIcon from "../../../assets/icons-map/restaurant.png";
 import SupermarketIcon from "../../../assets/icons-map/courses.png";
-import CinemaIcon from "../../../assets/icons-map/pop-corn-cinema.webp";
+import CinemaIcon from "../../../assets/icons-map/emoji_popcorn.png";
 import GymIcon from "../../../assets/icons-map/gym.webp";
-import BarbershopIcon from "../../../assets/icons-map/barber.png";
-import FastFoodIcon from "../../../assets/icons-map/fastfood.webp";
-import HouseIcon from "../../../assets/icons-map/house.png";
+import BarbershopIcon from "../../../assets/icons-map/emoji_barber.png";
+import FastFoodIcon from "../../../assets/icons-map/emoji_fries.png";
+import HouseIcon from "../../../assets/icons-map/emoji_building2.png";
 
 
 

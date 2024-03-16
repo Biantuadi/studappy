@@ -3,9 +3,9 @@ import { View, Image, StyleSheet } from 'react-native';
 import Swiper from 'react-native-swiper';
 
 const images = [
-  "https://as1.ftcdn.net/v2/jpg/03/03/85/64/1000_F_303856460_ZW2DnQgZv2BrpIpFCwh80qgYXv284SmT.jpg",
-  "https://www.thegoodgoods.fr/wp-content/uploads/2023/05/asos-logo.jpeg",
-  "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/adidas-logo-design-template-416e301e26d296a75536e1f323a013e0_screen.jpg?ts=1686456385",
+  "https://images.unidays.world/i/self-serve/customer/DwkD_Bx9tE2_Yq_AKzudsKt6wmOPiLxIsGt2wvqyFeE=/header/251f9a98-fdda-4e2c-99d6-f05e1370a608",
+  "https://spotifmania.com/wp-content/uploads/2023/05/How-to-Get-Spotify-Student-Discount.webp",
+  "https://images.frandroid.com/wp-content/uploads/2023/01/amazon-prime-student-deal.jpg",
 ];
 
 export default function BannerPublicity() {

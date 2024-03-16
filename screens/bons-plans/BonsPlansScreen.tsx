@@ -61,11 +61,11 @@ export default function BonsPlansScreen() {
           image={Magazin}
           onPress={() => handleCategorySelect("Magasins")}
         />
-        <CardCategory
+        {/* <CardCategory
           title="Logements"
           image={Apart}
           onPress={() => handleCategorySelect("Logements")}
-        />
+        /> */}
       </CardsContainer>
       <StatusBar style="auto" backgroundColor={mainTheme.colors.white} />
     </BonsPlansScreenContainer>

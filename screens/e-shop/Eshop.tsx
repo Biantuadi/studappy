@@ -81,7 +81,7 @@ export default function EshopScreen() {
 
         <TypeContainer>
           {types.map((type, index) => (
-            <TypeCard key={index} onPress={() => handleSelect(index)} selected={selectedType === index}>
+            <TypeCard key={index} onPress={() => handleSelect(index)} selected={selectedType === index} activeOpacity={0.8}>
               <TypeText selected={selectedType === index}>{type.emoji} {type.name}</TypeText>
             </TypeCard>
           ))}
@@ -150,7 +150,7 @@ const SearchContainer = styled.View`
   align-items: center;
   gap: 10px;
   margin-top: 23px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 `;
 
 const SearchInput = styled.TextInput`

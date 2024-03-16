@@ -91,7 +91,7 @@ export const marketPlace = [
       "https://www.grapheine.com/wp-content/uploads/2012/09/ebay-logo-01.jpg",
   },
   {
-    name: "AliExp...",
+    name: "AliExp.",
     promotionPourcent: getRandomPercentage(),
     image:
       "https://ae01.alicdn.com/kf/Sbc29f5d774a04521b4bcbae119971747m/Gant-de-gardien-de-but.png",

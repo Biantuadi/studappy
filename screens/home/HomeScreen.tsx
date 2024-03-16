@@ -43,12 +43,11 @@ export default function HomeScreen() {
               onPress={() => navigation.navigate("BonsPlans")}
             />
             {/* ou abonnements */}
-            <Category text="WebOffers" iconName="globe" />
+            <Category text="e-Shop" iconName="globe" onPress={() => navigation.navigate("Eshop")} />
           </GroupeCategories>
           <GroupeCategories>
             <Category text="Aides d'État" iconName="cash" />
-            {/* e-shop ou tech (outil => telephone, ordi, ...) */}
-            <Category text="e-Shop" iconName="cart" onPress={() => navigation.navigate("Eshop")}/>
+            <Category text="Logements" iconName="home" onPress={() => navigation.navigate("Map", { category: "Logements"})} />
           </GroupeCategories>
         </ContainerCategories>
 

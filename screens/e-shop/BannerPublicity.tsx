@@ -1,11 +1,32 @@
 import React from 'react';
 import { View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
+import Disney from '../../assets/banner_publicity/disney.jpeg';
+import Spotify from '../../assets/banner_publicity/spotify.jpg';
+import Amazon from '../../assets/banner_publicity/amazon_student.webp';
 
-const images = [
-  "https://images.unidays.world/i/self-serve/customer/DwkD_Bx9tE2_Yq_AKzudsKt6wmOPiLxIsGt2wvqyFeE=/header/251f9a98-fdda-4e2c-99d6-f05e1370a608",
-  "https://macstores.vn/tin-tuc/wp-content/uploads/2022/01/20220105_61d5d4ec89931.jpg",
-  "https://www.cosedamamme.it/wp-content/uploads/2023/08/amazon-student-meta-prezzo-gratis-studenti.png",
+// const images = [
+//   "https://images.unidays.world/i/self-serve/customer/DwkD_Bx9tE2_Yq_AKzudsKt6wmOPiLxIsGt2wvqyFeE=/header/251f9a98-fdda-4e2c-99d6-f05e1370a608",
+//   "https://macstores.vn/tin-tuc/wp-content/uploads/2022/01/20220105_61d5d4ec89931.jpg",
+//   "https://www.cosedamamme.it/wp-content/uploads/2023/08/amazon-student-meta-prezzo-gratis-studenti.png",
+// ];
+
+const BannerPublicityData = [
+  {
+    id: 1,
+    name: "Disney+",
+    image: Disney,
+  },
+  {
+    id: 2,
+    name: "Spotify",
+    image: Spotify,
+  },
+  {
+    id: 3,
+    name: "Amazon Prime",
+    image: Amazon,
+  },
 ];
 
 export default function BannerPublicity() {
@@ -21,11 +42,11 @@ export default function BannerPublicity() {
         activeDot={<View style={styles.activeDot} />}
         paginationStyle={styles.pagination}
       >
-        {images.map((image, index) => (
+        {BannerPublicityData.map((publicity, index) => (
           <TouchableOpacity activeOpacity={0.8} key={index} style={styles.slide}>
             <>
               <Image
-                source={{ uri: image }}
+                source={publicity.image as any}
                 style={styles.image}
               />
             </>

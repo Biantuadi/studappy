@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import CardSuggestion from "./CardSugestion";
 import { Image } from "react-native";
-import Fire from "../../../assets/Fire.png";
+import Fire from "../../../assets/animated_icons/Fire.png";
 // import BannerPublicity from "../../e-shop/BannerPublicity";
 
 export default function Sugestions() {

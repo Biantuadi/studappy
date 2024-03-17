@@ -7,7 +7,7 @@ import { mainTheme } from "../../theme/main.theme";
 interface CompanyItemProps {
   imageUri: string;
   companyName: string;
-  onPress?: () => void;
+  onPressCard?: () => void;
   pourcent: number;
   style?: any;
   isBorder?: boolean;
@@ -17,12 +17,12 @@ const CompanyItem: React.FC<CompanyItemProps> = ({
   imageUri,
   companyName,
   pourcent,
-  onPress,
+  onPressCard,
   style,
   isBorder,
 }) => {
   return (
-    <ButtonTouchableOpacity onPress={onPress} activeOpacity={0.8} style={style}>
+    <ButtonTouchableOpacity onPress={onPressCard} activeOpacity={0.8} style={style}>
       <CompanyCard>
         <CompanyImage 
         source={{ uri: imageUri }}

@@ -40,21 +40,19 @@ export default function HomeScreen() {
             {/* onclick navigate to map */}
             <Category
               text="Bons Plans"
-              // iconName="pricetags"
               icon={<Ionicons name="pricetags" size={22} color="#e1e1e166" />}
               onPress={() => navigation.navigate("BonsPlans")}
             />
-            {/* ou abonnements */}
-            <Category text="e-Shop" 
-            onPress={() => navigation.navigate("Eshop")}
-            icon={<FontAwesome name="shopping-bag" size={22} color="#e1e1e166" />}
-             />
+            <Category text="Logements" icon={<FontAwesome name="building" size={22} color="#e1e1e166" />} onPress={() => navigation.navigate("Map", { category: "Logements"})} />
           </GroupeCategories>
           <GroupeCategories>
             <Category text="Aides d'État" 
             icon={<Ionicons name="cash" size={22} color="#e1e1e166" />}
              />
-            <Category text="Logements" icon={<FontAwesome name="building" size={22} color="#e1e1e166" />} onPress={() => navigation.navigate("Map", { category: "Logements"})} />
+            <Category text="e-Shop" 
+            onPress={() => navigation.navigate("Eshop")}
+            icon={<FontAwesome name="shopping-bag" size={22} color="#e1e1e166" />}
+             />
           </GroupeCategories>
         </ContainerCategories>
 

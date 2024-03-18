@@ -93,7 +93,7 @@ export const marketPlace = [
     border: true,
   },
   {
-    name: "AliExp.",
+    name: "AliExpress",
     promotionPourcent: getRandomPercentage(),
     image:
       "https://ae01.alicdn.com/kf/Sbc29f5d774a04521b4bcbae119971747m/Gant-de-gardien-de-but.png",

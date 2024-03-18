@@ -8,7 +8,29 @@ export const isEmpty = (value: string | object | null | undefined) => {
 };
 
 // cut text to 100 characters and add "..." at the end
-export const cutText = (text: string) => {
-  return text.length > 80 ? text.slice(0, 80) + "..." : text;
+export const cutText = (text: string, maxLength: number, dot?: boolean) => {
+  if (dot) {
+    return text.length > maxLength ? text.slice(0, maxLength) + "." : text;
+  } else {
+    return text.length > maxLength ? text.slice(0, maxLength)  + "...": text;
+  }
 };
+
+import { Alert, Platform, ToastAndroid } from "react-native";
+
+
+export default function capitalizeFirstLetter(sentence: string) {
+  return sentence.charAt(0).toUpperCase() + sentence.slice(1).toLowerCase();
+}
+
+
+
+// Fonction pour afficher un message en fonction de la plateforme
+export function showMessage(message: string) {
+  if (Platform.OS === "android") {
+    ToastAndroid.show(message, ToastAndroid.SHORT);
+  } else if (Platform.OS === "ios") {
+    Alert.alert("Message", message);
+  }
+}
 

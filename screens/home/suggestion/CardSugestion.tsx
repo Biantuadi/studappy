@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native';
 import { mainTheme } from '../../../theme/main.theme';
+import { cutText } from '../../../utils/main.utils';
 
 type CardSuggestionProps = {
     image: string;
@@ -24,7 +25,7 @@ export default function CardSuggestion( {image, title, subtitle, titleRequis, pr
 
         <CardText>
           <CardTextTitle>
-            {title}
+          {cutText(title, 20)}
           </CardTextTitle>
           <CardTextSubTitle>
             {subtitle}

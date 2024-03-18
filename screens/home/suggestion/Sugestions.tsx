@@ -22,15 +22,15 @@ export default function Sugestions() {
       >
         <CardSuggestion
           image="https://www.aproposdecriture.com/wp-content/uploads/2019/07/Vacances.jpg"
-          title="Partir en vacance"
-          subtitle="Délivrée par l'Etat"
+          title="Partir en vacance" // le nombre de caractère dans ce texte est 17
+          subtitle="Délivrée par l'Etat" // le nombre de caractère dans ce texte est 25
           titleRequis="18 - 25 ans"
           price={250}
         />
 
         <CardSuggestion
           image="https://www.studycdn.space/sites/default/files/2022-10/arton105384.jpg"
-          title="Financement permis B"
+          title="Financement permis B" // le nombre de caractère dans ce texte est 19
           subtitle="Délivrée par l'Etat"
           titleRequis="Alternants"
           price={500}

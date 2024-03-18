@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 import styled from "styled-components/native";
-import { FlatList, Dimensions, View, Image } from "react-native";
+import { FlatList, Dimensions, View, Image, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { mainTheme } from "../../theme/main.theme";
 import BannerPublicity from "./BannerPublicity";
@@ -146,7 +146,7 @@ export default function EshopScreen() {
                 <PopularTitle>Les plus populaires</PopularTitle>
                 <PopularIcon
                   source={{ uri: types[selectedType].animatedEmoji }}
-                />
+                  />
               </PopularContainer>
             </>
           }
@@ -161,6 +161,8 @@ export default function EshopScreen() {
             paddingTop: 10,
           }}
         />
+
+        
       </EshopContainer>
       <AlertCopyCode 
           visible={visible} 

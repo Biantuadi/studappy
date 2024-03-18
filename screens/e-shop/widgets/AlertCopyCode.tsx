@@ -7,11 +7,12 @@ import {
   Image,
   Text,
 } from "react-native";
-import Button from "./Button";
+import Button from "../../../components/Button";
 import * as Clipboard from "react-native";
 import { Platform } from "react-native";
 import { ToastAndroid } from "react-native";
 import { Alert } from "react-native";
+import { ScrollView } from "react-native";
 
 interface Props {
   visible: boolean;
@@ -57,7 +58,11 @@ export default function AlertCopyCode({
           }
         }}
       >
-        <View style={styles.modalView}>
+        <ScrollView 
+        style={styles.modalView}
+        contentContainerStyle={{paddingBottom: 30}}
+        showsVerticalScrollIndicator={false}
+        >
           <View style={styles.RowView}>
             <Image
               source={{ uri: item.image }}
@@ -72,7 +77,7 @@ export default function AlertCopyCode({
             <Text style={styles.Title}>{item.name}</Text>
           </View>
           <Text style={styles.textDescription}>
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+          {item.name} fait une offre spéciale de {item.promotionPourcent}% de réduction sur votre prochain achat.
           </Text>
 
           <View style={styles.CodePromos}>
@@ -90,8 +95,26 @@ export default function AlertCopyCode({
             />
           </View>
 
+          {/* <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" alt="Memo" width="25" height="25" /> */}
+          {/* <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" alt="Memo" width="25" height="25" /> */}
+
+          <View style={styles.consignes}>
+            <View style={{ flexDirection: "row", alignItems: "flex-end", gap: 5, marginBottom: 10 }}>
+              <Image source={{ uri: "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png"}} style={{ height: 27, width: 27 }} />
+              <Text style={styles.textTitleCons}>Utilisation</Text>
+            </View>
+            <Text style={styles.subtitleCons}>
+            ✔️ Rendez-vous sur le site de {item.name}
+            </Text>
+            <Text style={styles.subtitleCons}>
+            ✔️ Ajoutez vos articles au panier
+            </Text>
+            <Text style={styles.subtitleCons}>
+            ✔️ Entrez le code promo lors de votre achat
+            </Text>
+          </View>
           
-        </View>
+        </ScrollView>
       </TouchableOpacity>
     </Modal>
   );
@@ -104,6 +127,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     position: "relative",
+    width: "100%",
   },
   modalView: {
     position: "absolute",
@@ -112,7 +136,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 25,
     padding: 35,
-    width: "100%",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -121,6 +144,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
+    width: "100%",
   },
   RowView: {
     flexDirection: "row",
@@ -134,6 +158,7 @@ const styles = StyleSheet.create({
   textDescription: {
     marginTop: 25,
     fontSize: 16,
+    width: "100%",
   },
   
   CodePromos: {
@@ -171,5 +196,16 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center",
+  },
+  consignes: {
+    marginTop: 30,
+  },
+  textTitleCons: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  subtitleCons: {
+    fontSize: 13,
+    marginTop: 15,
   },
 });

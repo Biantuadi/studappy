@@ -3,12 +3,12 @@ import styled from "styled-components/native";
 import { FlatList, Dimensions, View, Image, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { mainTheme } from "../../theme/main.theme";
-import BannerPublicity from "./BannerPublicity";
+import BannerPublicity from "./widgets/BannerPublicity";
 import { marketPlace, marques, tech } from "../../data/fakeDatasE-shop";
-import CompanyItem from "./CompanyCard";
+import CompanyItem from "./widgets/CompanyCard";
 import BackButton from "../../components/BackButton";
 import { StatusBar } from "expo-status-bar";
-import AlertCopyCode from "../../components/AlertCopyCode";
+import AlertCopyCode from "./widgets/AlertCopyCode";
 import FastImage from 'react-native-fast-image';
 
 const screenWidth = Dimensions.get("window").width;

@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
-import Disney from '../../assets/banner_publicity/disney.jpeg';
-import Spotify from '../../assets/banner_publicity/spotify.jpg';
-import Amazon from '../../assets/banner_publicity/amazon_student.webp';
+import Disney from '../../../assets/banner_publicity/disney.jpeg';
+import Spotify from '../../../assets/banner_publicity/spotify.jpg';
+import Amazon from '../../../assets/banner_publicity/amazon_student.webp';
 
 // const images = [
 //   "https://images.unidays.world/i/self-serve/customer/DwkD_Bx9tE2_Yq_AKzudsKt6wmOPiLxIsGt2wvqyFeE=/header/251f9a98-fdda-4e2c-99d6-f05e1370a608",

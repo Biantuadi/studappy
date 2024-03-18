@@ -43,7 +43,11 @@ export default function HomeScreen() {
               icon={<Ionicons name="pricetags" size={22} color="#e1e1e166" />}
               onPress={() => navigation.navigate("BonsPlans")}
             />
-            <Category text="Logements" icon={<FontAwesome name="building" size={22} color="#e1e1e166" />} onPress={() => navigation.navigate("Map", { category: "Logements"})} />
+            <Category 
+            text="Logements" 
+            icon={<FontAwesome name="building" size={22} color="#e1e1e166" />} 
+            onPress={() => navigation.navigate("Map", { category: "Logements", openList: true})} 
+            />
           </GroupeCategories>
           <GroupeCategories>
             <Category text="Aides d'État" 

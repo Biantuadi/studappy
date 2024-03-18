@@ -2,8 +2,8 @@
 import React from "react";
 import styled from "styled-components/native";
 import { TouchableOpacity } from "react-native";
-import { mainTheme } from "../../theme/main.theme";
-import { cutText } from "../../utils/main.utils";
+import { mainTheme } from "../../../theme/main.theme";
+import { cutText } from "../../../utils/main.utils";
 
 interface CompanyItemProps {
   imageUri: string;

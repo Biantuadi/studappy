@@ -18,15 +18,21 @@ import {
   vetementsData,
 } from "../../data/fakeDataMap";
 
+interface MapScreenProps {
+  category: string;
+  openList: boolean;
+
+}
+
 const MapScreen = () => {
-  const [isList, setIsList] = useState(false);
+  const route = useRoute();
+  // Définir "Repas" comme catégorie par défaut si aucune catégorie n'est passée
+  const { category = "Repas", openList }: any = route.params || {};
+  const [isList, setIsList] = useState(openList || false);
   const [location, setLocation] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigation = useNavigation();
-  const route = useRoute();
 
-  // Définir "Repas" comme catégorie par défaut si aucune catégorie n'est passée
-  const { category = "Repas" }: any = route.params || {};
 
   useEffect(() => {
     setLoading(true);

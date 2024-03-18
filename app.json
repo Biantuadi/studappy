@@ -4,7 +4,7 @@
     "slug": "studappy",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.jpeg",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -36,7 +36,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icon.jpeg",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.kevin0033.studappy",
@@ -63,7 +63,20 @@
       "url": "https://u.expo.dev/66669cf7-07f3-4a1d-9ee8-dc7ea25a0fed"
     },
     "plugins": [
-      "expo-build-properties"
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 31,
+            "targetSdkVersion": 31,
+            "buildToolsVersion": "31.0.0"
+          },
+          "ios": {
+            "deploymentTarget": "15.0"
+          }
+  
+        }
+      ]
     ]
   }
 }

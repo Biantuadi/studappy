@@ -182,7 +182,6 @@ export const cinemasData = [
   }
 ]
 
-
 export const gymsData = [
   {
     id: 1,
@@ -294,7 +293,14 @@ export const logementsData = [
       latitude: 48.6921,
       longitude: 6.144, // Coordinates near Nancy, France
     },
-    imageBg: "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
+    imageBg: "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
+    city: "Nancy",
+    country: "France",
+    author: {
+      name: "John Doe"
+    },
+    dateDispo: "23-02-2024"
+
     
   },
   {
@@ -312,6 +318,12 @@ export const logementsData = [
       longitude: 6.215, // Coordinates near Nancy, France
     },
     imageBg: "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
+    city: "Nancy",
+    country: "France",
+    author: {
+      name: "John Doe"
+    },
+    dateDispo: "23-02-2024"
    
   },
   {
@@ -329,12 +341,16 @@ export const logementsData = [
       longitude: 6.186, // Coordinates near Nancy, France
     },
     imageBg: "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
+    city: "Nancy",
+    country: "France",
+    author: {
+      name: "John Doe"
+    },
+    dateDispo: "23-02-2024"
     
   }
 
 ]
-
-// magasins de vetements
 
 export const vetementsData = [
   {

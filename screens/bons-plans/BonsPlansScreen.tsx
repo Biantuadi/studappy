@@ -18,7 +18,11 @@ export default function BonsPlansScreen() {
   const navigation = useNavigation();
 
   const handleCategorySelect = (category: string) => {
-    navigation.navigate("Map", { category });
+    navigation.navigate(
+      "Map", 
+    { category}
+      
+    );
   };
 
   return (

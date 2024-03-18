@@ -28,7 +28,10 @@ interface MapScreenProps {
 const MapScreen = () => {
   const route = useRoute();
   // Définir "Repas" comme catégorie par défaut si aucune catégorie n'est passée
-  const { category = "Repas", openList }: any = route.params || {};
+  const { 
+    category = "Repas",
+   openList
+   }: any = route.params || {};
   const [isList, setIsList] = useState(openList || false);
   const [location, setLocation] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -156,7 +159,7 @@ const MapScreen = () => {
 
       { (
   isList ? (
-    <ListComponent category={category} data={getDataForCategory(category)} />
+    <ListComponent category={category} data={getDataForCategory(category)}  />
   ) : loading ? (
     <LoaderContainer>
       <ActivityIndicator size="large" color={mainTheme.colors.primary} />

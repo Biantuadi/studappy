@@ -17,6 +17,7 @@ import {
   logementsData,
   vetementsData,
 } from "../../data/fakeDataMap";
+import ListComponent from "./widgets/ListComponent";
 
 interface MapScreenProps {
   category: string;
@@ -153,21 +154,27 @@ const MapScreen = () => {
         </ContainerCategories>
       </MenuMapContainer>
 
-      {loading ? (
-        <LoaderContainer>
-          <ActivityIndicator size="large" color={mainTheme.colors.primary} />
-          <TextLoader>La carte se charge, veuillez patienter...</TextLoader>
-        </LoaderContainer>
-      ) : (
-        !isList &&
-        location && (
-          <MapComponent
-            location={location}
-            data={getDataForCategory(category)}
-            category={category}
-          />
-        )
-      )}
+      { (
+  isList ? (
+    <ListComponent category={category} data={getDataForCategory(category)} />
+  ) : loading ? (
+    <LoaderContainer>
+      <ActivityIndicator size="large" color={mainTheme.colors.primary} />
+      <TextLoader>La carte se charge, veuillez patienter...</TextLoader>
+    </LoaderContainer>
+  ):(
+    !isList &&
+    location && (
+      <MapComponent
+        location={location}
+        data={getDataForCategory(category)}
+        category={category}
+      />
+    )
+  )
+)}
+
+
     </MapScreenContainer>
   );
 };

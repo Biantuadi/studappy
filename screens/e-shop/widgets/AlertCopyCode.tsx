@@ -60,7 +60,6 @@ export default function AlertCopyCode({
       >
         <ScrollView 
         style={styles.modalView}
-        contentContainerStyle={{paddingBottom: 30}}
         showsVerticalScrollIndicator={false}
         >
           <View style={styles.RowView}>

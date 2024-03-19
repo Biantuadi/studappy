@@ -26,11 +26,6 @@ const MapComponent = ({ location, data }: any) => {
   };
 
   const [mapRegion, setMapRegion] = React.useState(newRegion);
-  
-  // const handleRegionChangeComplete = (region: any) => {
-  //   console.log("New region:", region);
-  //   setMapRegion(region);
-  // };
 
   return (
     <MapScreenContainer>

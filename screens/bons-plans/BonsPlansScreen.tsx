@@ -10,8 +10,6 @@ import Cinema from "../../assets/icons/cinema.png";
 import { useNavigation } from "@react-navigation/native";
 import CardCategory from "../../components/CardCategory";
 import { StatusBar } from "expo-status-bar";
-import Apart from "../../assets/icons/apart.png";
-import { Ionicons } from "@expo/vector-icons";
 import BackButton from "../../components/BackButton";
 
 export default function BonsPlansScreen() {
@@ -20,7 +18,7 @@ export default function BonsPlansScreen() {
   const handleCategorySelect = (category: string) => {
     navigation.navigate(
       "Map", 
-    { category}
+    { category, openList: false }
       
     );
   };

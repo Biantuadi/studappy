@@ -1,10 +1,10 @@
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import styled from 'styled-components/native';
 import { mainTheme } from '../../../theme/main.theme';
 import Swiper from 'react-native-swiper';
 import { StyleSheet } from 'react-native';
-import capitalizeFirstLetter from '../../../utils/main.utils';
+import capitalizeFirstLetter, { cutText } from '../../../utils/main.utils';
 
 export default function ListComponent({category, data }: any) {
   return (
@@ -36,7 +36,7 @@ export default function ListComponent({category, data }: any) {
 
             </TextTitle>
             <Text>
-              Lorem ipsum dolor sit amet, consectetur.
+              {item.description && cutText(item.description, 42)}
             </Text>
           </ContainerTexts>
         </ContainerCard>

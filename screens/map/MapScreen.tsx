@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import * as Location from "expo-location";
 import { ActivityIndicator, Platform } from "react-native";
@@ -19,24 +19,13 @@ import {
 } from "../../data/fakeDataMap";
 import ListComponent from "./widgets/ListComponent";
 
-interface MapScreenProps {
-  category: string;
-  openList: boolean;
-
-}
-
 const MapScreen = () => {
   const route = useRoute();
-  // Définir "Repas" comme catégorie par défaut si aucune catégorie n'est passée
-  const { 
-    category = "Repas",
-   openList
-   }: any = route.params || {};
-  const [isList, setIsList] = useState(openList || false);
+  const { category = "Repas", openList = false }: any = route.params || {};
+  const [isList, setIsList] = useState(openList);
   const [location, setLocation] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigation = useNavigation();
-
 
   useEffect(() => {
     setLoading(true);
@@ -57,7 +46,17 @@ const MapScreen = () => {
     };
 
     getLocationPermission();
-  }, []); // si on rajoute [navigation] ça va permettre de recharger la page à chaque fois qu'on change de page
+  }, [navigation]);
+
+  // Fonction pour réinitialiser isList lorsque vous quittez la page
+  const resetIsList = useCallback(() => {
+    setIsList(false);
+  }, []);
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener("blur", resetIsList);
+    return unsubscribe;
+  }, [navigation, resetIsList]);
 
   const getDataForCategory = (category: any) => {
     switch (category) {
@@ -79,6 +78,7 @@ const MapScreen = () => {
         return [];
     }
   };
+  
 
   return (
     <MapScreenContainer>
@@ -157,25 +157,23 @@ const MapScreen = () => {
         </ContainerCategories>
       </MenuMapContainer>
 
-      { (
-  isList ? (
-    <ListComponent category={category} data={getDataForCategory(category)}  />
-  ) : loading ? (
-    <LoaderContainer>
-      <ActivityIndicator size="large" color={mainTheme.colors.primary} />
-      <TextLoader>La carte se charge, veuillez patienter...</TextLoader>
-    </LoaderContainer>
-  ):(
-    !isList &&
-    location && (
-      <MapComponent
-        location={location}
-        data={getDataForCategory(category)}
-        category={category}
-      />
-    )
+      {isList ? (
+  <ListComponent category={category} data={getDataForCategory(category)} />
+) : loading ? (
+  <LoaderContainer>
+    <ActivityIndicator size="large" color={mainTheme.colors.primary} />
+    <TextLoader>La carte se charge, veuillez patienter...</TextLoader>
+  </LoaderContainer>
+) : (
+  !isList && location && (
+    <MapComponent
+      location={location}
+      data={getDataForCategory(category)}
+      category={category}
+    />
   )
 )}
+
 
 
     </MapScreenContainer>

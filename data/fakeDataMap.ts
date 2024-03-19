@@ -299,7 +299,8 @@ export const logementsData = [
     author: {
       name: "John Doe"
     },
-    dateDispo: "23-02-2024"
+    dateDispo: "23-02-2024",
+    description: "Lorem ipsum dolor sit amet, consecteur."
 
     
   },
@@ -323,7 +324,8 @@ export const logementsData = [
     author: {
       name: "John Doe"
     },
-    dateDispo: "23-02-2024"
+    dateDispo: "23-02-2024",
+    description: "Lorem ipsum dolor sit amet, consecteur."
    
   },
   {
@@ -346,7 +348,8 @@ export const logementsData = [
     author: {
       name: "John Doe"
     },
-    dateDispo: "23-02-2024"
+    dateDispo: "23-02-2024",
+    description: "Lorem ipsum dolor sit amet, consecteur."
     
   }
 

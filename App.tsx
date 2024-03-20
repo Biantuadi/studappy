@@ -20,22 +20,13 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000); // 1000 millisecondes = 1 seconde
+    }, 500); // 1000 millisecondes = 1 seconde
 
     return () => clearTimeout(timer);
   }, []);
 
   // const optionTransitionNavitation:NativeStackNavigationOptions = {
   //   animation: 'slide_from_right',
-  // };
-
-
-  // const profileScreenOptions:any = {
-  //   ...TransitionPresets.ModalFadeTransition,
-  //   transitionSpec: {
-  //     open: { animation: 'timing', config: { duration: 500 } }, // Durée de la transition d'ouverture
-  //     close: { animation: 'timing', config: { duration: 500 } }, // Durée de la transition de fermeture
-  //   },
   // };
 
   return (

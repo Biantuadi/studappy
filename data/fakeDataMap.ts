@@ -10,11 +10,7 @@ export const repasData = [
       longitude: 6.144, // Coordinates near Nancy, France
     },
     type: "restaurant",
-   images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],},
+   },
 
   {
     id: 2,
@@ -27,11 +23,7 @@ export const repasData = [
       longitude: 6.215, // Coordinates near Nancy, France
     },
     type: "restaurant",
-   images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],},
+   },
 
   {
     id: 3,
@@ -44,11 +36,7 @@ export const repasData = [
       longitude: 6.186, // Coordinates near Nancy, France
     },
     type: "fastfood",
-   images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],},
+   },
 
   {
     id: 4,
@@ -61,11 +49,7 @@ export const repasData = [
       longitude: 6.1875, // Coordinates near Nancy, France
     },
     type: "fastfood",
-   images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],},
+   },
 
   {
     id: 5,
@@ -78,11 +62,7 @@ export const repasData = [
       longitude: 6.16, // Coordinates near Nancy, France
     },
     type: "fastfood",
-   images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],},
+   },
 
 ];
 
@@ -91,11 +71,7 @@ export const coursesData = [
     id: 1,
     name: "Lidl",
     type: "Supermarket",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.3,
     coordinates: {
       latitude: 48.6921,
@@ -106,11 +82,7 @@ export const coursesData = [
     id: 2,
     name: "Auchan",
     type: "Supermarket",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.5,
     coordinates: {
       latitude: 48.69,
@@ -121,11 +93,7 @@ export const coursesData = [
     id: 3,
     name: "Carrefour",
     type: "Supermarket",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.6,
     coordinates: {
       latitude: 48.6905,
@@ -140,11 +108,7 @@ export const cinemasData = [
     name: "Cinéma Kinepolis",
     distance: 0.3,
     type: "Cinema",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     coordinates: {
       latitude: 48.6921,
       longitude: 6.144, // Coordinates near Nancy, France
@@ -154,11 +118,7 @@ export const cinemasData = [
     id: 2,
     name: "Cinéma UGC",
     type: "Cinema",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.5,
     coordinates: {
       latitude: 48.69,
@@ -169,11 +129,7 @@ export const cinemasData = [
     id: 3,
     name: "Cinéma Gaumont",
     type: "Cinema",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.6,
     coordinates: {
       latitude: 48.6905,
@@ -188,11 +144,7 @@ export const gymsData = [
     name: "Basic Fit",
     distance: 0.3,
     type: "Gym",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     coordinates: {
       latitude: 48.6921,
       longitude: 6.144, // Coordinates near Nancy, France
@@ -202,11 +154,7 @@ export const gymsData = [
     id: 2,
     name: "Keep Cool",
     type: "Gym",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.5,
     coordinates: {
       latitude: 48.69,
@@ -217,11 +165,7 @@ export const gymsData = [
     id: 3,
     name: "Fitlane",
     type: "Gym",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.6,
     coordinates: {
       latitude: 48.6905,
@@ -235,11 +179,7 @@ export const barbersData = [
     id: 1,
     name: "Barber Shop",
     type: "barber",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.3,
     coordinates: {
       latitude: 48.6921,
@@ -250,11 +190,7 @@ export const barbersData = [
     id: 2,
     name: "Hair Salon",
     type: "barber",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.5,
     coordinates: {
       latitude: 48.69,
@@ -265,11 +201,7 @@ export const barbersData = [
     id: 3,
     name: "Hairdresser",
     type: "Barber",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.6,
     coordinates: {
       latitude: 48.6905,
@@ -360,11 +292,7 @@ export const vetementsData = [
     id: 1,
     name: "Zara",
     type: "Vetements",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.3,
     coordinates: {
       latitude: 48.6921,
@@ -375,11 +303,7 @@ export const vetementsData = [
     id: 2,
     name: "H&M",
     type: "Vetements",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.5,
     coordinates: {
       latitude: 48.69,
@@ -390,11 +314,7 @@ export const vetementsData = [
     id: 3,
     name: "C&A",
     type: "Vetements",
-     images: [
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp",
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/5a/09/5a/5a095ad8745152664c2aeac0b2acb13729a0f664.jpg?rule=classified-760x460-webp"
-    ],
+     
     distance: 0.6,
     coordinates: {
       latitude: 48.6905,

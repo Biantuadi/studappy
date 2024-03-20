@@ -78,16 +78,11 @@ const MapScreen = () => {
         return [];
     }
   };
-  
 
   return (
     <MapScreenContainer>
       <StatusBar style="dark" backgroundColor={mainTheme.colors.white} />
-      <MenuMapContainer style={
-        isList && { backgroundColor: "#fff" }
-
-        
-        }>
+      <MenuMapContainer style={isList && { backgroundColor: "#fff" }}>
         <ContainerReturnAndSearch
           style={Platform.OS === "ios" && { marginTop: 15 }}
         >
@@ -158,24 +153,25 @@ const MapScreen = () => {
       </MenuMapContainer>
 
       {isList ? (
-  <ListComponent category={category} data={getDataForCategory(category)} />
-) : loading ? (
-  <LoaderContainer>
-    <ActivityIndicator size="large" color={mainTheme.colors.primary} />
-    <TextLoader>La carte se charge, veuillez patienter...</TextLoader>
-  </LoaderContainer>
-) : (
-  !isList && location && (
-    <MapComponent
-      location={location}
-      data={getDataForCategory(category)}
-      category={category}
-    />
-  )
-)}
-
-
-
+        <ListComponent
+          category={category}
+          data={getDataForCategory(category)}
+        />
+      ) : loading ? (
+        <LoaderContainer>
+          <ActivityIndicator size="large" color={mainTheme.colors.primary} />
+          <TextLoader>La carte se charge, veuillez patienter...</TextLoader>
+        </LoaderContainer>
+      ) : (
+        !isList &&
+        location && (
+          <MapComponent
+            location={location}
+            data={getDataForCategory(category)}
+            category={category}
+          />
+        )
+      )}
     </MapScreenContainer>
   );
 };

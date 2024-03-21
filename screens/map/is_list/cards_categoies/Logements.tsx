@@ -48,7 +48,7 @@ export default function Logements({ item, category }: any) {
           ))}
         </Swiper>
       </ContainerCaroussel>
-      <ContainerTexts>
+      <ContainerTexts onPress={() => console.log("Go to details")} activeOpacity={0.3}>
         <ContainerRowTextTitle>
           <TextTitle>
             {capitalizeFirstLetter(item.city + ", " + item.country)
@@ -88,7 +88,7 @@ const ImageStyled = styled.Image`
   object-fit: cover;
 `;
 
-const ContainerTexts = styled.View`
+const ContainerTexts = styled.TouchableOpacity`
   padding: 20px;
   padding-top: 0;
 `;

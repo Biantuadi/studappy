@@ -12,7 +12,7 @@ export default function ListComponent({ category, data }: any) {
         <Title>disponibles dans votre région 📍</Title>
       </Acroche>
       {data.map((item: any, key: any) => (
-        <ContainerCard key={key} activeOpacity={0.7}>
+        <ContainerCard key={key}>
           {category === "Logements" && (
             <Logements item={item} category={category} />
           )}
@@ -43,7 +43,7 @@ const Title = styled.Text`
   color: ${mainTheme.colors.primary};
 `;
 
-const ContainerCard = styled.TouchableOpacity`
+const ContainerCard = styled.View`
   background-color: ${mainTheme.colors.white};
   border-radius: 10px;
   margin: 20px;

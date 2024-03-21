@@ -6,7 +6,7 @@ import { StatusBar } from "expo-status-bar";
 import styled from "styled-components/native";
 import { mainTheme } from "../../theme/main.theme";
 import ContainerSearch from "./widgets/ContainerSearch";
-import MapComponent from "./widgets/MapComponent";
+import MapComponent from "./is_map/MapComponent";
 import { Entypo, Ionicons } from "@expo/vector-icons";
 import {
   repasData,
@@ -17,7 +17,7 @@ import {
   logementsData,
   vetementsData,
 } from "../../data/fakeDataMap";
-import ListComponent from "./widgets/ListComponent";
+import ListComponent from "./is_list/ListComponent";
 
 const MapScreen = () => {
   const route = useRoute();

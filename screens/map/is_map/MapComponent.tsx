@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { StyleSheet, Image } from "react-native";
-import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
+import { StyleSheet, Image, View } from "react-native";
+import MapView, { Callout, Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import styled from "styled-components/native";
 import { mapStyle } from "../../../theme/map.style";
 import MyPositionAnim from "../../home/inactif_map/MyPositionAnim";
@@ -56,16 +56,44 @@ const MapComponent = ({ location, data }: any) => {
           <Marker
             key={place.id}
             coordinate={place.coordinates}
-            title={place.name}
+            // title={"10€"}
             // description={place.cuisine ? `${place.cuisine} | Rating: ${place.rating}` : null}
           >
-            {renderMarkerIcon(place.type)}
+           <View style={{alignItems: 'center'}}>
+             {renderMarkerIcon(place.type)}
+             <Callout tooltip={true}>
+                 <ViewCallaoutTextContainer>
+                  <CalloutText>10€</CalloutText>
+                 </ViewCallaoutTextContainer>
+             </Callout>
+           </View>
           </Marker>
         ))}
       </MapView>
     </MapScreenContainer>
   );
 };
+
+const CalloutContainer = styled.View`
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
+const ViewCallaoutTextContainer = styled.View`
+  background-color: #ffffff;
+  border-radius: 5px;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+  ${mainTheme.platformShadow(3)}
+`;
+
+const CalloutText = styled.Text`
+  font-size: 16px;
+  text-align: center;
+`;
 
 const renderMarkerIcon = (type: string) => {
   const typeLowerCase = type && type.toLowerCase();

@@ -5,7 +5,7 @@ import Swiper from "react-native-swiper";
 import { Ionicons } from "@expo/vector-icons";
 import capitalizeFirstLetter, { cutText } from "../../../../utils/main.utils";
 
-export default function Logements({ item, category }: any) {
+export default function Logements({ item }: any) {
     const handleLike = (id: any) => {
         console.log("Like", id);
         

@@ -74,20 +74,14 @@ const MapComponent = ({ location, data }: any) => {
   );
 };
 
-const CalloutContainer = styled.View`
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-`;
-
 const ViewCallaoutTextContainer = styled.View`
   background-color: #ffffff;
   border-radius: 5px;
-  width: 50px;
+  width: 38px;
   align-items: center;
   justify-content: center;
-  ${mainTheme.platformShadow(3)}
+  border: 1px solid #0000002a;
+  /* ${mainTheme.platformShadow(7)} */
 `;
 
 const CalloutText = styled.Text`
@@ -101,9 +95,7 @@ const renderMarkerIcon = (type: string) => {
     case "restaurant":
       return <Image source={RestaurantIcon as any} style={styles.markerIcon} />;
     case "supermarket":
-      return (
-        <Image source={SupermarketIcon as any} style={styles.markerIcon} />
-      );
+      return <Image source={SupermarketIcon as any} style={styles.markerIcon} />;
     case "cinema":
       return <Image source={CinemaIcon as any} style={styles.markerIcon} />;
     case "gym":

@@ -8,6 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { mainTheme } from "../../theme/main.theme";
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
+import { Text } from "react-native";
 
 export default function HomeScreen() {
   const navigation: any = useNavigation();
